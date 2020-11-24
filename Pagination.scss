@@ -1,0 +1,25 @@
+
+
+.pagination{
+  display: flex;
+  .disabled{opacity: 0.5}
+  .active{background-color: #3B69B1;color: white;}
+  li{
+    padding: 10px;
+    border: solid 1px rgba(0,0,0,0.3);
+    &:last-child{
+      margin-right: 5px;
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+    }
+    &:first-child{
+      margin-left: 5px;
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+    }
+    &:last-child , &:first-child{
+      background-color: #3B69B1;
+      color: white;
+    }
+  }
+}

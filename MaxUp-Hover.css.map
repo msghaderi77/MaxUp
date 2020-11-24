@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,kBAAkB;AAGlB,AAAA,KAAK,CAAA;EACD,UAAU,EAAE,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,mBAAgB;CAEvC;;AAHD,AAEI,KAFC,AAEA,MAAM,CAAA;EAAC,UAAU,EAAE,CAAC,CAAC,GAAG,CAAC,IAAI,CAAC,kBAAgB;EAAC,SAAS,EAAG,gBAAgB;CAAG",
+    "sources": [
+        "MaxUp-Hover.scss"
+    ],
+    "names": [],
+    "file": "MaxUp-Hover.css"
+}

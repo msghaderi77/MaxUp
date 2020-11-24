@@ -1,0 +1,13 @@
+/*  MaxUp-Hover */
+.h-up {
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+}
+
+.h-up:hover {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+/*# sourceMappingURL=MaxUp-Hover.css.map */
