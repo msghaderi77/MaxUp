@@ -1,6 +1,11 @@
 # MaxUp
-MaxUp is css framework.
+MaxUp is a css framework.
 
-Version : 1.0.2
+Tutorial : https://maxup.fibdesign.ir
 
-Tutorial coming soon...
+Version : 1.1.0
+
+External Features : 
+- Fontawesome
+- Google Font : Karla
+

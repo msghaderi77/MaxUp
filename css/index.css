@@ -6,12 +6,8 @@
 
 @import "MaxUp.css";
 @import "MaxUp-grid.css";
-
-
-/*@import "MaxUp-Hover.css";*/
-/*@import "MaxUp-Scroll.css";*/
-/*@import "Pagination.css";*/
-/*@import "futures.css";*/
+@import "MaxUp-Hover.css";
+@import "Pagination.css";
 
 
 @font-face {
