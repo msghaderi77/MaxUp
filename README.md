@@ -15,7 +15,6 @@ laravel blade:
 
 
 <h1>install</h1>
-<hr>
 
 
 <h3> css : </h3> 
