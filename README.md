@@ -9,3 +9,5 @@ External Features :
 - Fontawesome
 - Google Font : Karla
 
+Required Files:
+- jQuery
