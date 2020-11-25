@@ -11,3 +11,6 @@ External Features :
 
 Required Files:
 - jQuery
+
+laravel blade:
+- pagination.blade.php
