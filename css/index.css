@@ -1,0 +1,25 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+/* Fontawesome */
+@import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
+
+
+@import "MaxUp.css";
+@import "MaxUp-grid.css";
+
+
+/*@import "MaxUp-Hover.css";*/
+/*@import "MaxUp-Scroll.css";*/
+/*@import "Pagination.css";*/
+/*@import "futures.css";*/
+
+
+@font-face {
+    font-family: IRANSans;
+    src: url('../font/IRANSans.ttf');
+    src: url('../font/IRANSans_Bold.ttf');
+    src: url('../font/IRANSans_Light.ttf');
+    src: url('../font/IRANSans_Medium.ttf');
+    src: url('../font/IRANSans_UltraLight.ttf');
+}
+*{font-family: IRANSans, Karla, serif;}

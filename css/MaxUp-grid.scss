@@ -1,6 +1,50 @@
-// * xcol *//
 
 
+.container {padding: 0 15px; margin: 0 auto;}
+container {padding: 0 15px; margin: 0 auto;}
+
+// row
+row , .row{
+    display: flex;
+    flex-wrap: wrap;
+    // row-c : row & center object from forth directions
+    &-c{display: flex;justify-content: center;align-items: center;}
+}
+
+// corow : container & row
+corow{
+    display: flex;
+    flex-wrap: wrap;
+    @extend .container;
+
+    // corow : container & row-c
+    &-c{
+        @extend .container;
+        @extend row-c;
+    }
+}
+
+// row : row & xcol
+rox{
+    @extend row; @extend xcol;
+    &-10{@extend row; @extend xcol-10;}
+    &-11{@extend row; @extend xcol-11;}
+    &-14{@extend row; @extend xcol-14;}
+    &-16{@extend row; @extend xcol-16;}
+    &-20{@extend row; @extend xcol-20;}
+    &-25{@extend row; @extend xcol-25;}
+    &-30{@extend row; @extend xcol-30;}
+    &-33{@extend row; @extend xcol-33;}
+    &-40{@extend row; @extend xcol-40;}
+    &-50{@extend row; @extend xcol-50;}
+    &-60{@extend row; @extend xcol-60;}
+    &-70{@extend row; @extend xcol-70;}
+    &-80{@extend row; @extend xcol-80;}
+    &-90{@extend row; @extend xcol-90;}
+}
+@media (min-width: 768px) {    .container {width: 750px;} container {width: 750px;}   corow{width: 750px;}  }
+@media (min-width: 992px) {    .container {width: 970px;}  container {width: 970px;}  corow{width: 970px;}  }
+@media (min-width: 1200px) {    .container {width: 1170px;} container {width: 1170px;}   corow{width: 1170px;}  }
 // xcol
 xcol{
 

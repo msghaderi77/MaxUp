@@ -1,29 +1,86 @@
-/* 
-
-* Infoemation
--------------------
-? Framework Name: MaxUp
-? Version: 1.5
-? Tutariol & Guide: maxup.fibdesign.ir
-*/
 
 
-// ! Start colors 
-$primary :#0275d8;
-$light: #f7f7f7;
-$dark: #292b2c;
-$warning: #f0ad4e;
+
+$primary : #6182b7;
+$primaryHA : #5a79ab;
+$primaryG : rgba(90, 121, 171, 0.3);
+
+$light: #f1f1f1;
+$lightHA: #e5e5e5;
+$lightG: rgba(229, 229, 229, 0.3);
+
+$dark: #161d20;
+$darkHA: #0d1113;
+$darkG: rgba(13, 17, 19, 0.3);
+
+$warning: #ec4908;
+$warningHA: #de450a;
+$warningG: rgba(222, 69, 10, 0.3);
+
 $danger: #d9534f;
+$dangerHA: #cd4e4a;
+$dangerG: rgba(205, 78, 74, 0.3);
+
 $info: #5bc0de;
-$success: #5cb85c;
-// ! End colors 
+$infoHA: #0099CC;
+$infoG: rgba(0, 153, 204, 0.3);
 
-// ************************************** 
-// * direction & opacity & position & display & width & height & z-index & transition & border-radius
+$success: #009774;
+$successHA: #008668;
+$successG: rgba(0, 134, 104, 0.3);
 
+$secondary: #655653;
+$secondaryHA : #5f514e;
+$secondaryG : rgba(95, 81, 78, 0.3);
+
+$bee: #ffc40e;
+$beeHA: #efb90e;
+$beeG: rgba(239, 185, 14, 0.3);
+
+// **************************************
+
+
+::-webkit-scrollbar-button{
+    background-color: rgba(0,0,0,0);
+    margin: 15px 0;
+}
+::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background:  #0275d8;
+    border-radius: 10px;
+    scroll-padding-block-start: 10px;
+}
+::-webkit-scrollbar-thumb:active{
+    background:  #00a0d6;
+}
+::-webkit-scrollbar-track{
+    display: none;
+}
 
 body{padding: 0;margin: 0;}
-*{a{text-decoration: none;color: unset;}  ul{list-style: none;}scroll-behavior: smooth;}
+*{
+    a{text-decoration: none;color: unset;}
+    ul{list-style: none;}scroll-behavior: smooth;
+
+    p{font-size: 1rem;}
+    h1{font-size: 2.5rem;}
+    h2{font-size: 2rem;}
+    h3{font-size: 1.75rem;}
+    h4{font-size: 1.5rem ;}
+    h5{font-size: 1.25rem ;}
+    h6{font-size: 1.15rem;}
+
+    p,h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        margin: 0!important;
+        font-weight: 500;
+        line-height: 1.7;
+        color: inherit;
+    }
+
+}
 *, *:before, *:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 hr{opacity: 0.3;}
 
@@ -61,30 +118,30 @@ hr{opacity: 0.3;}
 }
 
 .w{
-    &-25{width: 25%;}
-    &-50{width: 50%;}
-    &-75{width: 75%;}
-    &-100{width: 100%;}
+    &-25{width: 25% !important;}
+    &-50{width: 50% !important;}
+    &-75{width: 75% !important;}
+    &-100{width: 100% !important;}
 
     &v{
-        &-25{width: 25vw;}
+        &-25{width: 25vw !important;}
         &-50{width: 50vw;}
-        &-75{width: 75vw;}
-        &-100{width: 100vw;}
+        &-75{width: 75vw !important;}
+        &-100{width: 100vw !important;}
     }
 }
 
 .h{
-    &-25{height: 25%;}
-    &-50{height: 50%;}
-    &-75{height: 75%;}
-    &-100{height: 100%;}
+    &-25{height: 25% !important;}
+    &-50{height: 50% !important;}
+    &-75{height: 75% !important;}
+    &-100{height: 100% !important;}
 
     &v{
-        &-25{height: 25vh;}
-        &-50{height: 50vh;}
-        &-75{height: 75vh;}
-        &-100{height: 100vh;}
+        &-25{height: 25vh !important;}
+        &-50{height: 50vh !important;}
+        &-75{height: 75vh !important;}
+        &-100{height: 100vh !important;}
     }
 }
 
@@ -162,21 +219,15 @@ hr{opacity: 0.3;}
 }
 
 .box-s{box-shadow: 0 0 6px rgba(0,0,0,0.16);}
-.box-d{box-shadow: 0 10px 6px rgba(0,0,0,0.16);}
 .t-0{top: 0;}
 .b-0{bottom: 0;}
 .l-0{left: 0;}
 .r-0{right: 0;}
-// **************************************
-// **************************************
-// **************************************
-// **************************************
-// **************************************
 
 
 
-// todo Start Navbar 
-navlight , navdark{
+
+navlight , navdark , navtransparent{
     position: relative;
     display: flex;
     align-items: center;
@@ -208,23 +259,12 @@ navlight , navdark{
         i *{color: black!important;}
     }
     ul{
-        display: flex;
-        list-style: none;
-
+        display: flex;list-style: none;
         li{
-            display: flex;
-            align-items: center;
-            
-            
+            display: flex;align-items: center;
             a{
-                text-transform: capitalize;
-                opacity: 0.6;
-                &:hover{opacity: 1;}
-
-                &.active{
-                    font-weight: bold;
-                    opacity: 1;
-                }
+                text-transform: capitalize;opacity: 0.6;
+                &:hover , &.active{opacity: 1;font-weight: bold;}
             }
         }
     }
@@ -243,17 +283,7 @@ navlight , navdark{
 
     //if menu list was uppercase
     &[class*="uppercase"] ul li a{text-transform: uppercase;}
-
-
-    
-    // if has h-drop
-    .h-drop{
-        @extend .h-drop;
-        h-dropbody{top: 50px;}
-    }
 }
-
-
 
 /* if nav was light */
 navlight{background-color: #ffffff;}
@@ -265,11 +295,15 @@ navdark{background-color: $dark;}
 navdark *{color: $light;}
 navdark .nav-toggle{border-color: #f7f7f746;}
 
+/*if nav was transparent */
+navtransparent{background-color: rgba(0,0,0,0);}
+navtransparent *{color: $dark;}
+navtransparent .nav-toggle{border-color: #292b2c46;}
 
 /*if width was less @800 */
 @media screen and (max-width:800px){
 
-    navlight , navdark{
+    navlight , navdark , navtransparent{
         height: 60px;
         flex-wrap:  wrap ;
         overflow: hidden;
@@ -285,10 +319,8 @@ navdark .nav-toggle{border-color: #f7f7f746;}
 }
 
 
-// todo End Navbar 
 
 
-// todo Start button 
 .btn-block{width: 100%;}
 button{
     padding: 10px 20px;
@@ -298,15 +330,14 @@ button{
     outline: none;
     @extend .trans-2;
 }
-
-.btn{
+.btn , a.btn {
     @extend button;
 
 
     &-primary{
         @extend .f-light;
         background-color: $primary;
-        &:hover , &.active{background-color: #0d47a1;}
+        &:hover , &.active{background-color: $primaryHA;}
         &-block{@extend .btn-block; @extend .btn-primary;}
         &-r{
             @extend .btn-primary;
@@ -318,7 +349,7 @@ button{
     &-light{
         background-color: $light;
         color: $dark;
-        &:hover , &.active{background-color: #e4e4e4;}
+        &:hover , &.active{background-color: $lightHA;}
         &-block{@extend .btn-block; @extend .btn-light;}
         &-r{
             @extend .btn-light;
@@ -329,7 +360,7 @@ button{
     &-dark{
         @extend .f-light;
         background-color: $dark;
-        &:hover , &.active{background-color: #000000 ;}
+        &:hover , &.active{background-color: $darkHA ;}
         &-block{@extend .btn-block; @extend .btn-dark;}
         &-r{
             @extend .btn-dark;
@@ -340,7 +371,7 @@ button{
     &-warning{
         @extend .f-light;
         background-color: $warning;
-        &:hover , &.active{background-color: #FF8800;}
+        &:hover , &.active{background-color: $warningHA;}
         &-block{@extend .btn-block; @extend .btn-warning;}
         &-r{
             @extend .btn-warning;
@@ -351,7 +382,7 @@ button{
     &-danger{
         @extend .f-light;
         background-color: $danger;
-        &:hover , &.active{background-color: #CC0000;}
+        &:hover , &.active{background-color: $dangerHA;}
         &-block{@extend .btn-block; @extend .btn-danger;}
         &-r{
             @extend .btn-danger;
@@ -363,7 +394,7 @@ button{
     &-info{
         @extend .f-light;
         background-color: $info;
-        &:hover , &.active{background-color: #0099CC;}
+        &:hover , &.active{background-color: $infoHA;}
         &-block{@extend .btn-block; @extend .btn-info;}
         &-r{
             @extend .btn-info;
@@ -374,7 +405,7 @@ button{
     &-success{
         @extend .f-light;
         background-color: $success;
-        &:hover , &.active{background-color: #007E33;}
+        &:hover , &.active{background-color: $successHA;}
         &-block{@extend .btn-block; @extend .btn-success;}
         &-r{
             @extend .btn-success;
@@ -391,6 +422,30 @@ button{
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-white-r;}
         }
+    }
+    &-secondary{
+        @extend .f-light;
+        background-color: $secondary;
+        &:hover , &.active{background-color: $secondaryHA;}
+        &-block{@extend .btn-block; @extend .btn-secondary;}
+        &-r{
+            @extend .btn-secondary;
+            @extend .round-50;
+            &-block{@extend .btn-block; @extend .btn-secondary-r;}
+        }
+    }
+    &-bee{
+        @extend .f-dark;
+        background-color: $bee;
+        &:hover , &.active{background-color: $beeHA;}
+        &-block{@extend .btn-block; @extend .btn-bee;}
+        &-r{
+            @extend .btn-bee;
+            @extend .round-50;
+            &-block{@extend .btn-block; @extend .btn-bee-r;}
+
+        }
+
     }
 
     
@@ -514,94 +569,43 @@ button{
             &-block{@extend .btn-block; @extend .btn-o-white-r;}
         }
     }
-}
-
-// todo End button 
-
-
-
-// todo row & row-c & xcol & rox & container & corow 
-
-.container {padding: 0 15px; margin: 0 auto;}
-container {padding: 0 15px; margin: 0 auto;}
-
-// row
-row , .row{
-    display: flex;
-    flex-wrap: wrap;
-    // row-c : row & center object from forth directions
-    &-c{display: flex;justify-content: center;align-items: center;}
-}
-
-// corow : container & row
-corow{
-    display: flex;
-    flex-wrap: wrap;
-    @extend .container;
-
-    // corow : container & row-c
-    &-c{
-        @extend .container;
-        @extend row-c;
+    &-o-secondary{
+        background-color: unset;
+        color: $secondary;
+        border: solid 1px $secondary;
+        &:hover , &.active{
+            background-color: $secondary;
+            color: white;
+        }
+        &-block{@extend .btn-block; @extend .btn-o-secondary;}
+        &-r{
+            @extend .btn-o-secondary;
+            @extend .round-50;
+            &-block{@extend .btn-block; @extend .btn-o-secondary-r;}
+        }
+    }
+    &-o-bee{
+        background-color: unset;
+        color: $bee;
+        border: solid 1px $bee;
+        &:hover , &.active{
+            background-color: $bee;
+            color: white;
+        }
+        &-block{@extend .btn-block; @extend .btn-o-bee;}
+        &-r{
+            @extend .btn-o-bee;
+            @extend .round-50;
+            &-block{@extend .btn-block; @extend .btn-o-bee-r;}
+        }
     }
 }
 
-xcol{
-    
-    flex: 0 0 100%;
-    max-width: 100%;
-    position: relative;
-    width: 100%;
-    padding: 10px;
-
-    &-10{flex: 0 0 10%; max-width: 10%; @extend xcol;}
-    &-11{flex: 0 0 11.1111%; max-width: 11.1111%; @extend xcol;}
-    &-14{flex: 0 0 114.28570%; max-width: 14.2857%; @extend xcol;}
-    &-16{flex: 0 0 16.6666%; max-width: 16.6666%; @extend xcol;}
-    &-20{flex: 0 0 20%; max-width: 20%; @extend xcol;}
-    &-25{flex: 0 0 25%; max-width: 25%; @extend xcol;}
-    &-30{flex: 0 0 30%; max-width: 30%; @extend xcol;}
-    &-33{flex: 0 0 33.3333%; max-width: 33.3333%; @extend xcol;}
-    &-40{flex: 0 0 40%; max-width: 40%; @extend xcol;}
-    &-50{flex: 0 0 50%; max-width: 50%; @extend xcol;}
-    &-60{flex: 0 0 60%; max-width: 60%; @extend xcol;}
-    &-70{flex: 0 0 70%; max-width: 70%; @extend xcol;}
-    &-80{flex: 0 0 80%; max-width: 80%; @extend xcol;}
-    &-90{flex: 0 0 90%; max-width: 90%; @extend xcol;}
-}
-
-
-// row : row & xcol
-rox{
-    @extend row; @extend xcol;
-    &-10{@extend row; @extend xcol-10;}
-    &-11{@extend row; @extend xcol-11;}
-    &-14{@extend row; @extend xcol-14;}
-    &-16{@extend row; @extend xcol-16;}
-    &-20{@extend row; @extend xcol-20;}
-    &-25{@extend row; @extend xcol-25;}
-    &-30{@extend row; @extend xcol-30;}
-    &-33{@extend row; @extend xcol-33;}
-    &-40{@extend row; @extend xcol-40;}
-    &-50{@extend row; @extend xcol-50;}
-    &-60{@extend row; @extend xcol-60;}
-    &-70{@extend row; @extend xcol-70;}
-    &-80{@extend row; @extend xcol-80;}
-    &-90{@extend row; @extend xcol-90;}
-}
 
 
 
 
-  @media (min-width: 768px) {    .container {width: 750px;} container {width: 750px;}   corow{width: 750px;}  }
-  @media (min-width: 992px) {    .container {width: 970px;}  container {width: 970px;}  corow{width: 970px;}  }
-  @media (min-width: 1200px) {    .container {width: 1170px;} container {width: 1170px;}   corow{width: 1170px;}  }
-  
-// todo row & row-c & xcol & rox & container & corow 
-
-
-
-// todo Start Form 
+/* input text */
 .form{
     width: 100%;
     height: calc(2.25rem + 2px);
@@ -627,10 +631,96 @@ rox{
     @extend .form;
     border-radius: 50px;
 }
-// todo End Form 
 
+/* input File */
+input[type=file]{
+    outline: 0;
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+}
+.file{
+    padding: 1em;
+    margin: 5px;
+    .file__label {
+        width: 100%;
+        border: 2px dashed $dark;
+        border-radius: 5px;
+        display: block;
+        padding: 1.2em;
+        transition: border 300ms ease;
+        cursor: pointer;
+        text-align: center;
 
-// todo Start color 
+        i {
+            display: block;
+            font-size: 42px;
+            padding-bottom: 16px;
+        }
+
+        i , .file__title {
+            color: $darkHA;
+            transition: 200ms color;
+        }
+
+        &:hover {
+            border: 2px solid $darkHA;
+
+            i,.file__title {
+                color: $darkHA;
+            }
+        }
+    }
+}
+
+/* input checkbox */
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+
+}
+.checkbox {
+    height: 25px;
+    width: 40px;
+    border-radius: 16px;
+    display: inline-block;
+    position: relative;
+    margin: 5px 0 0 0;
+    border: 2px solid rgba(71, 71, 85, 0.21);
+    background: rgba(0, 0, 0, 0);
+    transition: all 0.2s ease;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: white;
+        box-shadow: 0 0px 4px rgba(44, 44, 44, 0.3);
+        transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
+    }
+
+    &:checked {
+        border-color: $success;
+        &:after {
+            transform: translatex(15px);
+            background: $success;
+        }
+
+    }
+}
+
 .bg-{
     &light{background-color: $light;}
     &dark{background-color: $dark;}
@@ -639,6 +729,8 @@ rox{
     &success{background-color: $success;}
     &info{background-color: $info;}
     &primary{background-color: $primary;}
+    &secondary{color: $secondary;}
+    &bee{color: $bee;}
 }
 
 .f-{
@@ -649,34 +741,27 @@ rox{
     &success{color: $success;}
     &info{color: $info;}
     &primary{color: $primary;}
-}
-// todo End color 
+    &secondary{color: $secondary;}
+    &bee{color: $bee;}
 
+    &center{text-align: center;}
+    &right{text-align: right;}
+    &left{text-align: left;}
 
-
-// todo Start Font size
-
-*{
-    p{font-size: 1rem;}
-    h1{font-size: 2.5rem;}
-    h2{font-size: 2rem;}
-    h3{font-size: 1.75rem;}
-    h4{font-size: 1.5rem ;}
-    h5{font-size: 1.25rem ;}
-    h6{font-size: 1.15rem;}
-    
-    p,h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-        margin: 0!important;
-        font-weight: 500;
-        line-height: 1.7;
-        color: inherit;
-    }
+    &10{font-size: 10px;}
+    &12{font-size: 12px;}
+    &14{font-size: 14px;}
+    &16{font-size: 16px;}
+    &18{font-size: 18px;}
+    &20{font-size: 20px;}
+    &30{font-size: 30px;}
+    &40{font-size: 40px;}
+    &50{font-size: 50px;}
+    &60{font-size: 60px;}
+    &70{font-size: 70px;}
+    &80{font-size: 80px;}
 }
 
-// todo End Font size
-
-
-// todo Start margin
 .m{
     &-0{
         margin: 0;
@@ -796,11 +881,7 @@ rox{
         &-auto{margin-right:auto;}
     }
 }
-// todo End margin
 
-
-
-// todo Start padding
 .p{
     &-0{
         padding: 0;
@@ -900,39 +981,6 @@ rox{
         &-5{padding-right: 50px;}
     }
 }
-// todo End padding
-
-// todo Start Font-siza
-.t-{
-    &10{font-size: 10px;}
-    &12{font-size: 12px;}
-    &14{font-size: 14px;}
-    &16{font-size: 16px;}
-    &18{font-size: 18px;}
-    &20{font-size: 20px;}
-    &30{font-size: 30px;}
-    &40{font-size: 40px;}
-    &50{font-size: 50px;}
-    &60{font-size: 60px;}
-    &70{font-size: 70px;}
-    &80{font-size: 80px;}
-}
-// todo End Font-siza
-
-
-
-
-
-
-// todo text align
-.t-{
-    &center{text-align: center;}
-    &right{text-align: right;}
-    &left{text-align: left;}
-}
-// todo
-
-
 
 
 
@@ -958,75 +1006,83 @@ table{
     }
 }
 
-
-
-
-
-/*checkbox*/
-input[type=checkbox] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
-
-    &:focus {
-        outline: 0;
-    }
-
-}
-.toggle {
-    height: 25px;
-    width: 40px;
-    border-radius: 16px;
-    display: inline-block;
-    position: relative;
-    margin: 5px 0 0 0;
-    border: 2px solid rgba(71, 71, 85, 0.21);
-    background: rgba(0, 0, 0, 0);
-    transition: all 0.2s ease;
-
-    &:after {
-        content: "";
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        background: white;
-        box-shadow: 0 0px 4px rgba(44, 44, 44, 0.3);
-        transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
-    }
-
-    &:checked {
-        border-color: green;
-        &:after {
-            transform: translatex(15px);
-            background: green;
-        }
-
-    }
-}
-
-
 .alert{
     width: 100%;
     border-radius: 5px;
     margin: 5px 0;
     font-size: 14px;
     padding: 5px;
+    text-align: center;
+    &-primary{
+        @extend .alert;
+        background-color: $primaryG;
+        border: 1px solid $primaryHA;
+        color: $primaryHA;
+    }
+    &-light{
+        @extend .alert;
+        background-color: $lightG;
+        border: 1px solid $lightHA;
+        color: $lightHA;
+    }
+    &-dark{
+        @extend .alert;
+        background-color: $lightG;
+        border: 1px solid $darkHA;
+        color: $darkHA;
+    }
+    &-warning{
+        @extend .alert;
+        background-color: $warningG;
+        border: 1px solid $warningHA;
+        color: $warningHA;
+    }
     &-danger{
         @extend .alert;
-        background-color: rgba(211, 72, 54, 1);
-        border: 1px solid rgba(211,72,54,1);
-        color: #fff;
+        background-color: $dangerG;
+        border: 1px solid $dangerHA;
+        color: $dangerHA;
+    }
+    &-info{
+        @extend .alert;
+        background-color: $infoG;
+        border: 1px solid $infoHA;
+        color: $infoHA;
     }
     &-success{
         @extend .alert;
-        background-color: rgba(83, 211, 54, 0.3);
-        border: 1px solid rgb(83, 211, 54);
-        color: rgb(62, 150, 41);
+        background-color: $successG;
+        border: 1px solid $successHA;
+        color: $successHA;
+    }
+    &-secondary{
+        @extend .alert;
+        background-color: $secondaryG;
+        border: 1px solid $secondaryHA;
+        color: $secondaryHA;
+    }
+    &-bee{
+        @extend .alert;
+        background-color: $beeG;
+        border: 1px solid $beeHA;
+        color: $beeHA;
     }
 }
+
+
+
+.progress {
+    background-color: $light;
+    width:100%;
+    height: 10px;
+    color: white;
+    border-radius: 50px;
+}
+.progress .progressbar {
+    background-color:$success;
+    width:60%;
+    height: 10px;
+    padding:5px 0 5px 0;
+    border-radius: 50px;
+}
+
