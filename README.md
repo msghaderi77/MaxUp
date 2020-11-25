@@ -14,8 +14,9 @@ laravel blade:
 - pagination.blade.php
 
 
-#install
-Follow this
+<h1>install</h1>
+<hr>
+
 
 <h3> css : </h3> 
 
