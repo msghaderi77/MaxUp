@@ -4245,6 +4245,23 @@ xcol{
 }
 
 
+column , .column{
+    columns: auto;
+    display: block;
+    orphans: 1;
+    widows: 1;
+    column-fill: balance;
+    padding: 10px;
+
+    .vcol , vcol{width: 100%;break-inside: avoid;display: inline-block;}
+    .vcol-span , vcol-span{column-span: all;display: block;}
+
+    &-2{@extend column;column-count: 2;}
+    &-3{@extend column;column-count: 3;}
+    &-4{@extend column;column-count: 4;}
+    &-5{@extend column;column-count: 5;}
+}
+
 
 // lg : 1200
 @media screen and (max-width:1200px){

@@ -729,8 +729,8 @@ input[type=checkbox] {
     &success{background-color: $success;}
     &info{background-color: $info;}
     &primary{background-color: $primary;}
-    &secondary{color: $secondary;}
-    &bee{color: $bee;}
+    &secondary{background-color: $secondary;}
+    &bee{background-color: $bee;}
 }
 
 .f-{
