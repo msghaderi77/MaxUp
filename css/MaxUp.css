@@ -337,8 +337,28 @@ hr {
   border-bottom-right-radius: 50px;
 }
 
+.bg-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bgc {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
 .box-s {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+}
+
+.box-l {
+  box-shadow: -7px -7px 20px #ffffff, 4px 4px 20px #d3dbe6;
+}
+
+.box-i {
+  box-shadow: #ccdbe8 3px 3px 6px 0 inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .t-0 {
@@ -776,6 +796,9 @@ input[type=checkbox]:focus {
 }
 .bg-bee {
   background-color: #ffc40e;
+}
+.bg-white {
+  background-color: #fff;
 }
 
 .f-light, .btn-primary, a.btn-primary, .btn-primary-block, a.btn-primary-block, .btn-primary-r, a.btn-primary-r, .btn-primary-r-block, a.btn-primary-r-block, .btn-dark, a.btn-dark, .btn-dark-block, a.btn-dark-block, .btn-dark-r, a.btn-dark-r, .btn-dark-r-block, a.btn-dark-r-block, .btn-warning, a.btn-warning, .btn-warning-block, a.btn-warning-block, .btn-warning-r, a.btn-warning-r, .btn-warning-r-block, a.btn-warning-r-block, .btn-danger, a.btn-danger, .btn-danger-block, a.btn-danger-block, .btn-danger-r, a.btn-danger-r, .btn-danger-r-block, a.btn-danger-r-block, .btn-info, a.btn-info, .btn-info-block, a.btn-info-block, .btn-info-r, a.btn-info-r, .btn-info-r-block, a.btn-info-r-block, .btn-success, a.btn-success, .btn-success-block, a.btn-success-block, .btn-success-r, a.btn-success-r, .btn-success-r-block, a.btn-success-r-block, .btn-secondary, a.btn-secondary, .btn-secondary-block, a.btn-secondary-block, .btn-secondary-r, a.btn-secondary-r, .btn-secondary-r-block, a.btn-secondary-r-block {
