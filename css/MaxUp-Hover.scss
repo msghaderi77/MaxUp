@@ -3,8 +3,34 @@
 
 // elemnt transform top up
 .h-up{
+    transition: 0.3s ease-in-out;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
     &:hover{box-shadow: 0 5px 10px rgba(0,0,0,0.20);transform : translateY(-5px);}
+}
+
+.h{
+    &-primary:hover{color: #6182b7;}
+    &-light:hover{color: #f1f1f1;}
+    &-dark:hover{color: #161d20;}
+    &-warning:hover{color: #ec4908;}
+    &-danger:hover{color: #d9534f;}
+    &-info:hover{color: #5bc0de;}
+    &-success:hover{color: #009774;}
+    &-white:hover{color: #fff;}
+    &-secondary:hover{color: #655653;}
+    &-bee:hover{color: #ffc40e;}
+
+    &-bg-primary:hover{ background-color: #6182b7;}
+    &-bg-light:hover{background-color: #f1f1f1;}
+    &-bg-dark:hover{background-color: #161d20;}
+    &-bg-warning:hover{background-color: #ec4908;}
+    &-bg-danger:hover{background-color: #d9534f;}
+    &-bg-info:hover{background-color: #5bc0de;}
+    &-bg-success:hover{background-color: #009774;}
+    &-bg-white:hover{background-color: #fff;}
+    &-bg-secondary:hover{background-color: #655653;}
+    &-bg-bee:hover{background-color: #ffc40e;}
+
 }
 
 
