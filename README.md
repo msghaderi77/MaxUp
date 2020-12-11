@@ -1,12 +1,13 @@
+
+# New On MaxUp
+* column element
+* new shadows
+* new hover
+
 # MaxUp
 MaxUp is a css framework.
 
 Version : 1.1.0
-
-### new
-* column element
-* new shadows
-* new hover
 
 
 External Features : 
