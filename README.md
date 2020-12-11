@@ -3,6 +3,12 @@ MaxUp is a css framework.
 
 Version : 1.1.0
 
+### new
+* column element
+* new shadows
+* new hover
+
+
 External Features : 
 - Fontawesome
 - Google Font : Karla
@@ -14,7 +20,7 @@ laravel blade:
 - pagination.blade.php
 
 
-<h1>install</h1>
+# install
 
 
 <h3> css : </h3> 
