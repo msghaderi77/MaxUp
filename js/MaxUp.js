@@ -1,6 +1,6 @@
 /* variables */
 
-// nav  
+// nav
 let Data_Collaps,
     nav,
     currect_height,
@@ -14,14 +14,14 @@ let Data_Collaps,
 
  /* window Resize Check */
 $(window).on('resize', function(){
-    
+
     let win = $(this); //this = window
 
     if (win.width() < 800) {
         Data_Collaps = true;
     }
 
-    if (win.width() > 800) { 
+    if (win.width() > 800 && $(".nav-toggle").length >= 1) {
         Data_Collaps = false;
         nav = $("#navbar");
         $(".nav-toggle").attr("data-collaps" , "true");
@@ -30,29 +30,25 @@ $(window).on('resize', function(){
 });
 /* --window Resize Check-- */
 
-
 /*  nav btn clicked */
-if ($(".nav-toggle")[0]){
-    $(".nav-toggle").on("click",function(){
+$(".nav-toggle").on("click",function(){
 
-        // get nav tag
-        navname = $(this).attr("data-id");
-        nav = $(navname);
-        // get data_collaps
-        Data_Collaps = $(this).attr("data-collaps");
-        if(Data_Collaps == "true"){
-            Data_Collaps = true;
-            $(this).attr("data-collaps" , "false");
-        }else{
-            Data_Collaps = false;
-            $(this).attr("data-collaps" , "true");
-        }
+    // get nav tag
+    navname = $(this).attr("data-id");
+    nav = $(navname);
+    // get data_collaps
+    Data_Collaps = $(this).attr("data-collaps");
+    if(Data_Collaps == "true"){
+        Data_Collaps = true;
+        $(this).attr("data-collaps" , "false");
+    }else{
+        Data_Collaps = false;
+        $(this).attr("data-collaps" , "true");
+    }
 
-        // Do Function : nav Collaps/unCollaps
-        Chnage_Data_Collaps();
-    });
-}
-
+    // Do Function : nav Collaps/unCollaps
+    Chnage_Data_Collaps();
+});
 /*  --nav btn clicked-- */
 
 
