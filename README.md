@@ -32,6 +32,5 @@ laravel blade:
 - Add ```<script src="./js/jquery/jquery-3.5.1.js"></script>``` to ```body```
 - Add ```<script src="./js/MaxUp.js"></script>``` to ```body```
 - Add ```<script src="./js/MaxUp-Functions.js"></script>``` to ```body```
-- Add ```<script src="./js/MaxUp-Elements.js"></script>``` to ```body```
 
 Have Fun.
