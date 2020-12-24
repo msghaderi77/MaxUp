@@ -12,7 +12,6 @@ Version : 1.1.0
 
 External Features : 
 - Fontawesome
-- Google Font : Karla
 
 Required Files:
 - jQuery
