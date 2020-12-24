@@ -60,3 +60,19 @@ $("navlight .nav-toggle , navdark .nav-toggle , navtransparent .nav-toggle").att
 
 
 
+
+$(".xSelect__label").on("click",function (e) {
+    $(this).parent().find(".xSelect__options").toggleClass("xToggle");
+});
+$(".xSelect__option__name").on("click",function (e) {
+    $(this).parent().parent().parent().parent().find(".xSelect__options").toggleClass("xToggle");
+    $(this).parent().parent().parent().parent().find(".xSelect__label__title").html($(this).text());
+});
+$(document).ready(function(){
+    $(".xSelect__search input").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(this).parent().parent().parent().parent().find(".xSelect__option").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});

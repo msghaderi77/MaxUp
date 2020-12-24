@@ -12,7 +12,7 @@ row , .row{
 }
 
 // corow : container & row
-corow{
+corow , .corow{
     display: flex;
     flex-wrap: wrap;
     @extend .container;
@@ -25,7 +25,7 @@ corow{
 }
 
 // row : row & xcol
-rox{
+rox , .rox{
     @extend row; @extend xcol;
     &-10{@extend row; @extend xcol-10;}
     &-11{@extend row; @extend xcol-11;}
@@ -46,15 +46,14 @@ rox{
 @media (min-width: 992px) {    .container {width: 970px;}  container {width: 970px;}  corow{width: 970px;}  }
 @media (min-width: 1200px) {    .container {width: 1170px;} container {width: 1170px;}   corow{width: 1170px;}  }
 // xcol
-xcol{
+xcol , .xcol{
 
     flex: 0 0 100%;
     max-width: 100%;
     position: relative;
     width: 100%;
     padding: 10px;
-    
-    
+
     
     // xcol-lg : xcol-10
     &-10{
@@ -4245,27 +4244,10 @@ xcol{
 }
 
 
-column , .column{
-    columns: auto;
-    display: block;
-    orphans: 1;
-    widows: 1;
-    column-fill: balance;
-    padding: 10px;
-
-    .vcol , vcol{width: 100%;break-inside: avoid;display: inline-block;}
-    .vcol-span , vcol-span{column-span: all;display: block;}
-
-    &-2{@extend column;column-count: 2;}
-    &-3{@extend column;column-count: 3;}
-    &-4{@extend column;column-count: 4;}
-    &-5{@extend column;column-count: 5;}
-}
-
 
 // lg : 1200
 @media screen and (max-width:1200px){
-    xcol{
+    xcol, .xcol{
         
         &-10{flex: 0 0 10%;max-width: 10%;
             &-10{flex: 0 0 10%;max-width: 10%;
@@ -7450,7 +7432,7 @@ column , .column{
 }
 // md : 992
 @media screen and (max-width:992px){
-    xcol{
+    xcol, .xcol{
         
         &-10{flex: 0 0 100%;max-width: 100%;
             &-10{flex: 0 0 10%;max-width: 10%;
@@ -10631,11 +10613,10 @@ column , .column{
         }
         
     }
-
 }
 // sm : 768
 @media screen and (max-width:768px){
-    xcol{
+    xcol, .xcol{
         
         &-10{flex: 0 0 100%;max-width: 100%;
             &-10{flex: 0 0 100%;max-width: 100%;

@@ -10,12 +10,4 @@
 @import "Pagination.css";
 
 
-@font-face {
-    font-family: IRANSans;
-    src: url('../font/IRANSans.ttf');
-    src: url('../font/IRANSans_Bold.ttf');
-    src: url('../font/IRANSans_Light.ttf');
-    src: url('../font/IRANSans_Medium.ttf');
-    src: url('../font/IRANSans_UltraLight.ttf');
-}
-*{font-family: IRANSans, Karla, serif;}
+*{font-family: Karla, serif;}
