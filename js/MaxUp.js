@@ -32,24 +32,27 @@ $(window).on('resize', function(){
 
 
 /*  nav btn clicked */
-$(".nav-toggle").on("click",function(){
+if ($(".nav-toggle")[0]){
+    $(".nav-toggle").on("click",function(){
 
-    // get nav tag
-    navname = $(this).attr("data-id");
-    nav = $(navname);
-    // get data_collaps
-    Data_Collaps = $(this).attr("data-collaps"); 
-    if(Data_Collaps == "true"){
-        Data_Collaps = true;
-        $(this).attr("data-collaps" , "false");
-    }else{
-        Data_Collaps = false;
-        $(this).attr("data-collaps" , "true");
-    }
-    
-    // Do Function : nav Collaps/unCollaps
-    Chnage_Data_Collaps();
-});
+        // get nav tag
+        navname = $(this).attr("data-id");
+        nav = $(navname);
+        // get data_collaps
+        Data_Collaps = $(this).attr("data-collaps");
+        if(Data_Collaps == "true"){
+            Data_Collaps = true;
+            $(this).attr("data-collaps" , "false");
+        }else{
+            Data_Collaps = false;
+            $(this).attr("data-collaps" , "true");
+        }
+
+        // Do Function : nav Collaps/unCollaps
+        Chnage_Data_Collaps();
+    });
+}
+
 /*  --nav btn clicked-- */
 
 
