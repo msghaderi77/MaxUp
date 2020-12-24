@@ -240,7 +240,7 @@ hr{opacity: 0.3;}
 
 
 
-navlight , navdark , navtransparent{
+navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
     position: relative;
     display: flex;
     align-items: center;
@@ -256,7 +256,7 @@ navlight , navdark , navtransparent{
         color: black;
     }
 
-    brand{
+    brand,.brand{
         height: 60px;
         display: flex;
         align-items: center;

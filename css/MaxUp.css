@@ -377,7 +377,7 @@ hr {
   right: 0;
 }
 
-navlight, navdark, navtransparent {
+navlight, navdark, navtransparent, .navlight, .navdark, .navtransparent {
   position: relative;
   display: flex;
   align-items: center;
@@ -387,55 +387,55 @@ navlight, navdark, navtransparent {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
   z-index: 900;
 }
-navlight *, navdark *, navtransparent * {
+navlight *, navdark *, navtransparent *, .navlight *, .navdark *, .navtransparent * {
   padding: 5px;
   text-decoration: none;
   color: black;
 }
-navlight brand, navdark brand, navtransparent brand {
+navlight brand, navlight .brand, navdark brand, navdark .brand, navtransparent brand, navtransparent .brand, .navlight brand, .navlight .brand, .navdark brand, .navdark .brand, .navtransparent brand, .navtransparent .brand {
   height: 60px;
   display: flex;
   align-items: center;
 }
-navlight brand img, navdark brand img, navtransparent brand img {
+navlight brand img, navlight .brand img, navdark brand img, navdark .brand img, navtransparent brand img, navtransparent .brand img, .navlight brand img, .navlight .brand img, .navdark brand img, .navdark .brand img, .navtransparent brand img, .navtransparent .brand img {
   height: 50px;
 }
-navlight .nav-toggle, navdark .nav-toggle, navtransparent .nav-toggle {
+navlight .nav-toggle, navdark .nav-toggle, navtransparent .nav-toggle, .navlight .nav-toggle, .navdark .nav-toggle, .navtransparent .nav-toggle {
   display: none;
   background-color: rgba(0, 0, 0, 0);
   border: solid 1px;
   border-radius: 5px;
 }
-navlight .nav-toggle i *, navdark .nav-toggle i *, navtransparent .nav-toggle i * {
+navlight .nav-toggle i *, navdark .nav-toggle i *, navtransparent .nav-toggle i *, .navlight .nav-toggle i *, .navdark .nav-toggle i *, .navtransparent .nav-toggle i * {
   color: black !important;
 }
-navlight ul, navdark ul, navtransparent ul {
+navlight ul, navdark ul, navtransparent ul, .navlight ul, .navdark ul, .navtransparent ul {
   display: flex;
   list-style: none;
 }
-navlight ul li, navdark ul li, navtransparent ul li {
+navlight ul li, navdark ul li, navtransparent ul li, .navlight ul li, .navdark ul li, .navtransparent ul li {
   display: flex;
   align-items: center;
 }
-navlight ul li a, navdark ul li a, navtransparent ul li a {
+navlight ul li a, navdark ul li a, navtransparent ul li a, .navlight ul li a, .navdark ul li a, .navtransparent ul li a {
   text-transform: capitalize;
   opacity: 0.6;
 }
-navlight ul li a:hover, navlight ul li a.active, navdark ul li a:hover, navdark ul li a.active, navtransparent ul li a:hover, navtransparent ul li a.active {
+navlight ul li a:hover, navlight ul li a.active, navdark ul li a:hover, navdark ul li a.active, navtransparent ul li a:hover, navtransparent ul li a.active, .navlight ul li a:hover, .navlight ul li a.active, .navdark ul li a:hover, .navdark ul li a.active, .navtransparent ul li a:hover, .navtransparent ul li a.active {
   opacity: 1;
   font-weight: bold;
 }
-navlight[class*=fixed], navdark[class*=fixed], navtransparent[class*=fixed] {
+navlight[class*=fixed], navdark[class*=fixed], navtransparent[class*=fixed], .navlight[class*=fixed], .navdark[class*=fixed], .navtransparent[class*=fixed] {
   width: 100%;
   z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
 }
-navlight[class*=noshadow], navdark[class*=noshadow], navtransparent[class*=noshadow] {
+navlight[class*=noshadow], navdark[class*=noshadow], navtransparent[class*=noshadow], .navlight[class*=noshadow], .navdark[class*=noshadow], .navtransparent[class*=noshadow] {
   box-shadow: unset;
 }
-navlight[class*=uppercase] ul li a, navdark[class*=uppercase] ul li a, navtransparent[class*=uppercase] ul li a {
+navlight[class*=uppercase] ul li a, navdark[class*=uppercase] ul li a, navtransparent[class*=uppercase] ul li a, .navlight[class*=uppercase] ul li a, .navdark[class*=uppercase] ul li a, .navtransparent[class*=uppercase] ul li a {
   text-transform: uppercase;
 }
 
