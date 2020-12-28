@@ -51,4 +51,44 @@ function postFile(InputFile , ProgressBar , path) {
 /* --Progress bar-- */
 
 
+function notifications(type) {
+    let title,body,cbg,fbg,icon;
+    switch (type) {
+        case 'success':
+            fbg = "f-success";
+            cbg = 'bg-success';
+            title = "موفقیت آمیز";
+            body = "عملیات موفقیت آمیز بود";
+            icon = "fa fa-check";
+            break;
+        case 'danger':
+            fbg = "f-danger";
+            cbg = 'bg-danger';
+            title = "عدم موفقیت";
+            body = "عملیات با مشکل  مواجه شد!";
+            icon = "fas fa-times";
+            break;
+        case 'warning':
+            fbg = "f-warning";
+            cbg = 'bg-warning';
+            title = "اخطار";
+            body = "عملیات با اخطار  مواجه شد!";
+            icon = "fas fa-exclamation-triangle";
+            break;
+    }
 
+    $("body").append('<div class="notification">\n' +
+        '  <div class="notification__main">\n' +
+        '    <div class="notification__close row-c"><i class="fas fa-times"></i></div>\n' +
+        '    <div class="notification__color '+cbg+'"></div>\n' +
+        '    <div class="notification__content">\n' +
+        '      <div class="notification__icon row-c '+cbg+'"><i class="'+icon+' f-light f-40"></i></div>\n' +
+        '      <div class="notification__body">\n' +
+        '        <p class="notification__context">'+body+'</p>\n' +
+        '        <h2 class="notification__title '+fbg+'">'+title+'</h2>\n' +
+        '      </div>\n' +
+        '    </div>\n' +
+        '  </div>\n' +
+        '</div>');
+    $(".notification__main").addClass("animate");
+}

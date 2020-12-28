@@ -1,8 +1,8 @@
 /* Fontawesome */
 @import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
 
-
+@import "MaxUp-colors.css";
 @import "MaxUp.css";
 @import "MaxUp-grid.css";
 @import "MaxUp-Hover.css";
-@import "Pagination.css";
+@import "MaxUp-Futures.css";

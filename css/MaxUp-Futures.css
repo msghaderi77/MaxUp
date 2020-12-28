@@ -1,0 +1,160 @@
+/* Pagination */
+.pagination {
+  display: flex;
+}
+.pagination .disabled {
+  opacity: 0.5;
+}
+.pagination .active {
+  background-color: #3B69B1;
+  color: white;
+}
+.pagination li {
+  padding: 10px;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+}
+.pagination li:last-child {
+  margin-right: 5px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.pagination li:first-child {
+  margin-left: 5px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.pagination li:last-child, .pagination li:first-child {
+  background-color: #3B69B1;
+  color: white;
+}
+
+/* End Pagination */
+/* Select */
+.xSelect {
+  width: 100%;
+  position: relative;
+}
+.xSelect .xSelect__label {
+  background-color: #fff;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 1px solid #00000030;
+  user-select: none;
+  cursor: pointer;
+}
+.xSelect .xSelect__options {
+  position: absolute;
+  margin-top: 10px;
+  overflow-y: scroll;
+  background-color: #fff;
+  width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 1px solid #00000030;
+  z-index: 1000000000000000100;
+  transition: 0.4s ease-in-out;
+  clip-path: circle(0% at 100% 0);
+}
+.xSelect .xSelect__option {
+  border-radius: 10px;
+}
+.xSelect .xSelect__option:hover {
+  background-color: #f7f7f7;
+}
+.xSelect .xSelect__option .xSelect__option__name {
+  cursor: pointer;
+  width: 95%;
+}
+.xSelect .xToggle {
+  clip-path: circle(150% at 100% 0);
+}
+
+/* End Select */
+/* Modal */
+/* End Modal */
+/* Notification */
+.notification {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999999999999;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+}
+.notification .notification__main.animate {
+  animation: notification 1s forwards;
+}
+.notification__color {
+  width: 350px;
+  height: 100px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 15%);
+}
+.notification__content {
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 400px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+.notification__content .notification__body {
+  flex: 0 0 100%;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.notification__content .notification__body .notification__context {
+  color: #00000060;
+}
+.notification .notification__icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  border: 2px solid white;
+}
+.notification .notification__close {
+  position: absolute;
+  z-index: 9999999999;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.notification .notification__close:hover {
+  background-color: #00000020;
+}
+
+@keyframes notification {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* End Notification */
+
+/*# sourceMappingURL=MaxUp-Futures.css.map */

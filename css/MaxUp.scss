@@ -1,44 +1,4 @@
-
-
-
-$primary : #6182b7;
-$primaryHA : #5a79ab;
-$primaryG : rgba(90, 121, 171, 0.3);
-
-$light: #f1f1f1;
-$lightHA: #e5e5e5;
-$lightG: rgba(229, 229, 229, 0.3);
-
-$dark: #161d20;
-$darkHA: #0d1113;
-$darkG: rgba(13, 17, 19, 0.3);
-
-$warning: #ec4908;
-$warningHA: #de450a;
-$warningG: rgba(222, 69, 10, 0.3);
-
-$danger: #d9534f;
-$dangerHA: #cd4e4a;
-$dangerG: rgba(205, 78, 74, 0.3);
-
-$info: #5bc0de;
-$infoHA: #0099CC;
-$infoG: rgba(0, 153, 204, 0.3);
-
-$success: #009774;
-$successHA: #008668;
-$successG: rgba(0, 134, 104, 0.3);
-
-$secondary: #655653;
-$secondaryHA : #5f514e;
-$secondaryG : rgba(95, 81, 78, 0.3);
-
-$bee: #ffc40e;
-$beeHA: #efb90e;
-$beeG: rgba(239, 185, 14, 0.3);
-
-// **************************************
-
+@import "MaxUp-colors";
 
 ::-webkit-scrollbar-button{
     background-color: rgba(0,0,0,0);
@@ -167,14 +127,14 @@ hr{opacity: 0.3;}
 }
 
 .round{
-    &-0{border-radius: 0;}
-    &ed{border-radius: 5px;}
-    &-10{border-radius: 10px;}
-    &-20{border-radius: 20px;}
-    &-30{border-radius: 30px;}
-    &-40{border-radius: 40px;}
-    &-50{border-radius: 50px;}
-    &-circle{border-radius: 50%;}
+    &-0{border-radius: 0!important;}
+    &ed{border-radius: 5px!important;}
+    &-10{border-radius: 10px!important;}
+    &-20{border-radius: 20px!important;}
+    &-30{border-radius: 30px!important;}
+    &-40{border-radius: 40px!important;}
+    &-50{border-radius: 50px!important;}
+    &-circle{border-radius: 50% !important;}
 }
 .r{
     &t{
@@ -260,6 +220,7 @@ navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
         height: 60px;
         display: flex;
         align-items: center;
+        margin-right: 30px;
         
         img{height: 50px;}
     }
@@ -275,8 +236,8 @@ navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
         display: flex;list-style: none;
         li{
             display: flex;align-items: center;
-            a{
-                text-transform: capitalize;opacity: 0.6;
+            a:not(.btn){
+                text-transform: capitalize;opacity: 0.6;transition: 0.2s ease-in-out;
                 &:hover , &.active{opacity: 1;font-weight: bold;}
             }
         }
@@ -299,29 +260,29 @@ navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
 }
 
 /* if nav was light */
-navlight{background-color: #ffffff;}
-navlight *{color: $dark;}
-navlight .nav-toggle{border-color: #292b2c46;}
+navlight , .navlight{background-color: #ffffff;}
+navlight *,.navlight *{color: $dark;}
+navlight .nav-toggle,.navlight .nav-toggle{border-color: #292b2c46;}
 
 /*if nav was dark */
-navdark{background-color: $dark;}
-navdark *{color: $light;}
-navdark .nav-toggle{border-color: #f7f7f746;}
+navdark,.navdark{background-color: $dark;}
+navdark *,.navdark *{color: $light;}
+navdark .nav-toggle,.navdark .nav-toggle{border-color: #f7f7f746;}
 
 /*if nav was transparent */
-navtransparent{background-color: rgba(0,0,0,0);}
-navtransparent *{color: $dark;}
-navtransparent .nav-toggle{border-color: #292b2c46;}
+navtransparent,.navtransparent{background-color: rgba(0,0,0,0);}
+navtransparent *,.navtransparent *{color: $dark;}
+navtransparent .nav-toggle,.navtransparent .nav-toggle{border-color: #292b2c46;}
 
 /*if width was less @800 */
 @media screen and (max-width:800px){
 
-    navlight , navdark , navtransparent{
+    navlight , navdark , navtransparent , .navlight , .navdark , .navtransparent{
         height: 60px;
         flex-wrap:  wrap ;
         overflow: hidden;
 
-        brand{flex: 0 0 80%;}
+        brand,.brand{flex: 0 0 80%;}
         .nav-toggle{flex: 0 0 10%;display: block;}
         ul{
             flex: 0 0 100%;
@@ -758,6 +719,7 @@ input[type=checkbox] {
     &secondary{color: $secondary;}
     &bee{color: $bee;}
 
+    &justify{text-align: justify;}
     &center{text-align: center;}
     &right{text-align: right;}
     &left{text-align: left;}
@@ -1098,53 +1060,4 @@ table{
     height: 10px;
     padding:5px 0 5px 0;
     border-radius: 50px;
-}
-
-
-
-
-.xSelect{
-    width: 100%;
-    position: relative;
-    .xSelect__label{
-        background-color: #fff;
-        width: 100%;
-        height: 40px;
-        border-radius: 10px;
-        padding: 5px 10px;
-        border: 1px solid #00000030;
-        user-select: none;
-        cursor: pointer;
-    }
-    .xSelect__options{
-        position: absolute;
-        margin-top: 10px;
-        overflow-y: scroll;
-        background-color: #fff;
-        width: 100%;
-        max-height: 300px;
-        border-radius: 10px;
-        padding: 5px 10px;
-        border: 1px solid #00000030;
-        z-index: 999999999999999999;
-        transition: 0.4s ease-in-out;
-
-
-        clip-path: circle(0% at 100% 0);
-    }
-    .xSelect__option{
-        border-radius: 10px;
-        &:hover{
-            background-color: #f7f7f7;
-        }
-        .xSelect__option__name{
-            cursor: pointer;
-            width: 95%;
-        }
-    }
-
-
-    .xToggle{
-        clip-path: circle(150% at 100% 0);
-    }
 }

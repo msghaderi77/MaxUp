@@ -240,28 +240,28 @@ hr {
 }
 
 .round-0 {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 .rounded {
-  border-radius: 5px;
+  border-radius: 5px !important;
 }
 .round-10 {
-  border-radius: 10px;
+  border-radius: 10px !important;
 }
 .round-20 {
-  border-radius: 20px;
+  border-radius: 20px !important;
 }
 .round-30 {
-  border-radius: 30px;
+  border-radius: 30px !important;
 }
 .round-40 {
-  border-radius: 40px;
+  border-radius: 40px !important;
 }
 .round-50, .btn-o-bee-r, .btn-o-bee-r-block, a.btn-o-bee-r-block, a.btn-o-bee-r, .btn-o-secondary-r, .btn-o-secondary-r-block, a.btn-o-secondary-r-block, a.btn-o-secondary-r, .btn-o-white-r, .btn-o-white-r-block, a.btn-o-white-r-block, a.btn-o-white-r, .btn-o-success-r, .btn-o-success-r-block, a.btn-o-success-r-block, a.btn-o-success-r, .btn-o-info-r, .btn-o-info-r-block, a.btn-o-info-r-block, a.btn-o-info-r, .btn-o-danger-r, .btn-o-danger-r-block, a.btn-o-danger-r-block, a.btn-o-danger-r, .btn-o-warning-r, .btn-o-warning-r-block, a.btn-o-warning-r-block, a.btn-o-warning-r, .btn-o-dark-r, .btn-o-dark-r-block, a.btn-o-dark-r-block, a.btn-o-dark-r, .btn-o-light-r, .btn-o-light-r-block, a.btn-o-light-r-block, a.btn-o-light-r, .btn-o-primary-r, .btn-o-primary-r-block, a.btn-o-primary-r-block, a.btn-o-primary-r, .btn-bee-r, .btn-bee-r-block, a.btn-bee-r-block, a.btn-bee-r, .btn-secondary-r, .btn-secondary-r-block, a.btn-secondary-r-block, a.btn-secondary-r, .btn-white-r, .btn-white-r-block, a.btn-white-r-block, a.btn-white-r, .btn-success-r, .btn-success-r-block, a.btn-success-r-block, a.btn-success-r, .btn-info-r, .btn-info-r-block, a.btn-info-r-block, a.btn-info-r, .btn-danger-r, .btn-danger-r-block, a.btn-danger-r-block, a.btn-danger-r, .btn-warning-r, .btn-warning-r-block, a.btn-warning-r-block, a.btn-warning-r, .btn-dark-r, .btn-dark-r-block, a.btn-dark-r-block, a.btn-dark-r, .btn-light-r, .btn-light-r-block, a.btn-light-r-block, a.btn-light-r, .btn-primary-r, .btn-primary-r-block, a.btn-primary-r-block, a.btn-primary-r {
-  border-radius: 50px;
+  border-radius: 50px !important;
 }
 .round-circle {
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 
 .rtl-5 {
@@ -396,6 +396,7 @@ navlight brand, navlight .brand, navdark brand, navdark .brand, navtransparent b
   height: 60px;
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
 navlight brand img, navlight .brand img, navdark brand img, navdark .brand img, navtransparent brand img, navtransparent .brand img, .navlight brand img, .navlight .brand img, .navdark brand img, .navdark .brand img, .navtransparent brand img, .navtransparent .brand img {
   height: 50px;
@@ -417,11 +418,12 @@ navlight ul li, navdark ul li, navtransparent ul li, .navlight ul li, .navdark u
   display: flex;
   align-items: center;
 }
-navlight ul li a, navdark ul li a, navtransparent ul li a, .navlight ul li a, .navdark ul li a, .navtransparent ul li a {
+navlight ul li a:not(.btn), navdark ul li a:not(.btn), navtransparent ul li a:not(.btn), .navlight ul li a:not(.btn), .navdark ul li a:not(.btn), .navtransparent ul li a:not(.btn) {
   text-transform: capitalize;
   opacity: 0.6;
+  transition: 0.2s ease-in-out;
 }
-navlight ul li a:hover, navlight ul li a.active, navdark ul li a:hover, navdark ul li a.active, navtransparent ul li a:hover, navtransparent ul li a.active, .navlight ul li a:hover, .navlight ul li a.active, .navdark ul li a:hover, .navdark ul li a.active, .navtransparent ul li a:hover, .navtransparent ul li a.active {
+navlight ul li a:not(.btn):hover, navlight ul li a:not(.btn).active, navdark ul li a:not(.btn):hover, navdark ul li a:not(.btn).active, navtransparent ul li a:not(.btn):hover, navtransparent ul li a:not(.btn).active, .navlight ul li a:not(.btn):hover, .navlight ul li a:not(.btn).active, .navdark ul li a:not(.btn):hover, .navdark ul li a:not(.btn).active, .navtransparent ul li a:not(.btn):hover, .navtransparent ul li a:not(.btn).active {
   opacity: 1;
   font-weight: bold;
 }
@@ -440,63 +442,63 @@ navlight[class*=uppercase] ul li a, navdark[class*=uppercase] ul li a, navtransp
 }
 
 /* if nav was light */
-navlight {
+navlight, .navlight {
   background-color: #ffffff;
 }
 
-navlight * {
+navlight *, .navlight * {
   color: #161d20;
 }
 
-navlight .nav-toggle {
+navlight .nav-toggle, .navlight .nav-toggle {
   border-color: #292b2c46;
 }
 
 /*if nav was dark */
-navdark {
+navdark, .navdark {
   background-color: #161d20;
 }
 
-navdark * {
+navdark *, .navdark * {
   color: #f1f1f1;
 }
 
-navdark .nav-toggle {
+navdark .nav-toggle, .navdark .nav-toggle {
   border-color: #f7f7f746;
 }
 
 /*if nav was transparent */
-navtransparent {
+navtransparent, .navtransparent {
   background-color: rgba(0, 0, 0, 0);
 }
 
-navtransparent * {
+navtransparent *, .navtransparent * {
   color: #161d20;
 }
 
-navtransparent .nav-toggle {
+navtransparent .nav-toggle, .navtransparent .nav-toggle {
   border-color: #292b2c46;
 }
 
 /*if width was less @800 */
 @media screen and (max-width: 800px) {
-  navlight, navdark, navtransparent {
+  navlight, navdark, navtransparent, .navlight, .navdark, .navtransparent {
     height: 60px;
     flex-wrap: wrap;
     overflow: hidden;
   }
-  navlight brand, navdark brand, navtransparent brand {
+  navlight brand, navlight .brand, navdark brand, navdark .brand, navtransparent brand, navtransparent .brand, .navlight brand, .navlight .brand, .navdark brand, .navdark .brand, .navtransparent brand, .navtransparent .brand {
     flex: 0 0 80%;
   }
-  navlight .nav-toggle, navdark .nav-toggle, navtransparent .nav-toggle {
+  navlight .nav-toggle, navdark .nav-toggle, navtransparent .nav-toggle, .navlight .nav-toggle, .navdark .nav-toggle, .navtransparent .nav-toggle {
     flex: 0 0 10%;
     display: block;
   }
-  navlight ul, navdark ul, navtransparent ul {
+  navlight ul, navdark ul, navtransparent ul, .navlight ul, .navdark ul, .navtransparent ul {
     flex: 0 0 100%;
     flex-wrap: wrap;
   }
-  navlight ul li, navdark ul li, navtransparent ul li {
+  navlight ul li, navdark ul li, navtransparent ul li, .navlight ul li, .navdark ul li, .navtransparent ul li {
     flex: 0 0 100%;
   }
 }
@@ -827,6 +829,9 @@ input[type=checkbox]:focus {
 }
 .f-bee {
   color: #ffc40e;
+}
+.f-justify {
+  text-align: justify;
 }
 .f-center {
   text-align: center;
@@ -1471,48 +1476,6 @@ table thead th {
   height: 10px;
   padding: 5px 0 5px 0;
   border-radius: 50px;
-}
-
-.xSelect {
-  width: 100%;
-  position: relative;
-}
-.xSelect .xSelect__label {
-  background-color: #fff;
-  width: 100%;
-  height: 40px;
-  border-radius: 10px;
-  padding: 5px 10px;
-  border: 1px solid #00000030;
-  user-select: none;
-  cursor: pointer;
-}
-.xSelect .xSelect__options {
-  position: absolute;
-  margin-top: 10px;
-  overflow-y: scroll;
-  background-color: #fff;
-  width: 100%;
-  max-height: 300px;
-  border-radius: 10px;
-  padding: 5px 10px;
-  border: 1px solid #00000030;
-  z-index: 1000000000000000100;
-  transition: 0.4s ease-in-out;
-  clip-path: circle(0% at 100% 0);
-}
-.xSelect .xSelect__option {
-  border-radius: 10px;
-}
-.xSelect .xSelect__option:hover {
-  background-color: #f7f7f7;
-}
-.xSelect .xSelect__option .xSelect__option__name {
-  cursor: pointer;
-  width: 95%;
-}
-.xSelect .xToggle {
-  clip-path: circle(150% at 100% 0);
 }
 
 /*# sourceMappingURL=MaxUp.css.map */
