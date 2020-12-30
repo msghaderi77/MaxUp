@@ -1,10 +1,11 @@
 {
   "name": "fibdesign_maxup",
+  "style":"css/index.css",
   "version": "1.0.2",
   "description": "css framework",
-  "main": "css/index.css",
+  "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "repository": {
     "type": "git",
@@ -15,10 +16,14 @@
     "framework",
     "maxup"
   ],
-  "author": "",
+  "author": {
+    "name": "Sadegh Ghaderi",
+    "email": "msghaderi99@gmail.com",
+    "url": "http://twitter.com/msghaderi99"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/msghaderi77/MaxUp/issues"
   },
-  "homepage": "https://github.com/msghaderi77/MaxUp#readme"
+  "homepage": "https://maxup.fibdesign.ir"
 }
