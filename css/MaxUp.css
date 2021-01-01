@@ -380,15 +380,20 @@ hr {
   right: 0;
 }
 
+.navIsActive {
+  clip-path: inset(0 0 0 0) !important;
+}
+
 navlight, navdark, navtransparent, .navlight, .navdark, .navtransparent {
   position: relative;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  height: 60px;
+  min-height: auto;
   transition: 0.3s ease-out;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
   z-index: 900;
+  clip-path: inset(0 0 calc(100% - 60px) 0);
 }
 navlight *, navdark *, navtransparent *, .navlight *, .navdark *, .navtransparent * {
   padding: 5px;
@@ -486,9 +491,7 @@ navtransparent .nav-toggle, .navtransparent .nav-toggle {
 /*if width was less @800 */
 @media screen and (max-width: 800px) {
   navlight, navdark, navtransparent, .navlight, .navdark, .navtransparent {
-    height: 60px;
     flex-wrap: wrap;
-    overflow: hidden;
   }
   navlight brand, navlight .brand, navdark brand, navdark .brand, navtransparent brand, navtransparent .brand, .navlight brand, .navlight .brand, .navdark brand, .navdark .brand, .navtransparent brand, .navtransparent .brand {
     flex: 0 0 80%;

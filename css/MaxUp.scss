@@ -149,7 +149,7 @@ hr{opacity: 0.3;}
             &-40{border-top-left-radius: 40px;}
             &-50{border-top-left-radius: 50px;}
         }
-        
+
         &r{
             &-5{border-top-right-radius: 5px;}
             &-10{border-top-right-radius: 10px;}
@@ -159,7 +159,7 @@ hr{opacity: 0.3;}
             &-50{border-top-right-radius: 50px;}
         }
     }
-    
+
     &b{
         &l{
             &-5{border-bottom-left-radius: 5px;}
@@ -169,7 +169,7 @@ hr{opacity: 0.3;}
             &-40{border-bottom-left-radius: 40px;}
             &-50{border-bottom-left-radius: 50px;}
         }
-        
+
         &r{
             &-5{border-bottom-right-radius: 5px;}
             &-10{border-bottom-right-radius: 10px;}
@@ -201,18 +201,24 @@ hr{opacity: 0.3;}
 .r-0{right: 0;}
 
 
-
+.navIsActive{
+    clip-path: inset(0 0 0 0) !important;
+}
 
 navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
     position: relative;
     display: flex;
     align-items: center;
     flex-wrap:  nowrap ;
-    height: 60px;
+    min-height: auto;
     transition: 0.3s ease-out;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
     z-index: 900;
-    
+    $size: calc(100% - 60px);
+    clip-path: inset(0 0 $size 0);
+
+
+
     *{
         padding: 5px;
         text-decoration: none;
@@ -224,7 +230,7 @@ navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
         display: flex;
         align-items: center;
         margin-right: 30px;
-        
+
         img{height: 50px;}
     }
 
@@ -245,7 +251,7 @@ navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
             }
         }
     }
-    
+
     // if nav has fixed calss
     &[class*="fixed"]{
         width: 100%;
@@ -281,9 +287,9 @@ navtransparent .nav-toggle,.navtransparent .nav-toggle{border-color: #292b2c46;}
 @media screen and (max-width:800px){
 
     navlight , navdark , navtransparent , .navlight , .navdark , .navtransparent{
-        height: 60px;
+        //height: 60px;
         flex-wrap:  wrap ;
-        overflow: hidden;
+        //overflow: hidden;
 
         brand,.brand{flex: 0 0 80%;}
         .nav-toggle{flex: 0 0 10%;display: block;}
@@ -321,7 +327,7 @@ button{
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-primary-r;}
         }
-        
+
     }
     &-light{
         background-color: $light;
@@ -366,7 +372,7 @@ button{
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-danger-r;}
         }
-    
+
     }
     &-info{
         @extend .f-light;
@@ -425,7 +431,7 @@ button{
 
     }
 
-    
+
     &-o-primary{
         background-color: unset;
         color: $primary;
@@ -435,7 +441,7 @@ button{
             color: white;
         }
         &-block{@extend .btn-block; @extend .btn-o-primary;}
-        &-r{ 
+        &-r{
             @extend .btn-o-primary;
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-o-primary-r;}
@@ -450,7 +456,7 @@ button{
             color: $dark;
         }
         &-block{@extend .btn-block; @extend .btn-o-light;}
-        &-r{ 
+        &-r{
             @extend .btn-o-light;
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-o-light-r;}
@@ -465,7 +471,7 @@ button{
             color: white;
         }
         &-block{@extend .btn-block; @extend .btn-o-dark;}
-        &-r{ 
+        &-r{
             @extend .btn-o-dark;
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-o-dark-r;}
@@ -480,7 +486,7 @@ button{
             color: white;
         }
         &-block{@extend .btn-block; @extend .btn-o-warning;}
-        &-r{ 
+        &-r{
             @extend .btn-o-warning;
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-o-warning-r;}
@@ -495,7 +501,7 @@ button{
             color: white;
         }
         &-block{@extend .btn-block; @extend .btn-o-danger;}
-        &-r{ 
+        &-r{
             @extend .btn-o-danger;
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-o-danger-r;}
@@ -510,7 +516,7 @@ button{
             color: white;
         }
         &-block{@extend .btn-block; @extend .btn-o-info;}
-        &-r{ 
+        &-r{
             @extend .btn-o-info;
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-o-info-r;}
@@ -525,7 +531,7 @@ button{
             color: white;
         }
         &-block{@extend .btn-block; @extend .btn-o-success;}
-        &-r{ 
+        &-r{
             @extend .btn-o-success;
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-o-success-r;}
@@ -540,7 +546,7 @@ button{
             color: $dark;
         }
         &-block{@extend .btn-block; @extend .btn-o-white;}
-        &-r{ 
+        &-r{
             @extend .btn-o-white;
             @extend .round-50;
             &-block{@extend .btn-block; @extend .btn-o-white-r;}

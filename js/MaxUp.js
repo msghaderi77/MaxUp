@@ -1,182 +1,159 @@
-/* variables */
+let DataCollapse = (window.innerWidth <= 800);
 
-// nav
-let Data_Collaps,
-    nav,
-    currect_height,
-    auto_height,
-    navname;
+/* if select exist, run the algorithm */
+(document.querySelectorAll('.xSelect') != null) ? RunXSelector() : false;
 
-/* variables */
+/* get nav-toggle and if exist, add data-collapse */
+const navToggleBtn = document.getElementsByClassName('nav-toggle');
+(navToggleBtn[0] != null) ? SetDataCollapseOnNavToggle() : console.log('nav-toggle dose not exist!');
 
+/* change data collapse on window resize */
+window.addEventListener('resize',function (){
+    DataCollapse = (window.innerWidth <= 800);
+    SetDataCollapseOnNavToggle();
+})
 
+/* Collapse/UnCollapse navbar on nav-toggle click */
+navToggleBtn[0].addEventListener('click',function (){
+    let NavBar = navToggleBtn[0].parentElement;
 
-
- /* window Resize Check */
-$(window).on('resize', function(){
-
-    let win = $(this); //this = window
-
-    if (win.width() < 800) {
-        Data_Collaps = true;
-    }
-
-    if (win.width() > 800 && $(".nav-toggle").length >= 1) {
-        Data_Collaps = false;
-        nav = $("#navbar");
-        $(".nav-toggle").attr("data-collaps" , "true");
-        Chnage_Data_Collaps();
-    }
-});
-/* --window Resize Check-- */
-
-/*  nav btn clicked */
-$(".nav-toggle").on("click",function(){
-
-    // get nav tag
-    navname = $(this).attr("data-id");
-    nav = $(navname);
-    // get data_collaps
-    Data_Collaps = $(this).attr("data-collaps");
-    if(Data_Collaps == "true"){
-        Data_Collaps = true;
-        $(this).attr("data-collaps" , "false");
+    if (!NavBar.classList.contains('navIsActive')) {
+        NavBar.classList.add('navIsActive');
     }else{
-        Data_Collaps = false;
-        $(this).attr("data-collaps" , "true");
+        NavBar.classList.remove('navIsActive');
     }
-
-    // Do Function : nav Collaps/unCollaps
-    Chnage_Data_Collaps();
-});
-/*  --nav btn clicked-- */
+})
 
 
-/*  --nav btn default attr- */
-$("navlight .nav-toggle , navdark .nav-toggle , navtransparent .nav-toggle").attr('data-collaps', 'true');
-/*  --nav btn default attr-- */
+function RunXSelector(){
+    const xSelects = document.querySelectorAll('.xSelect');
+    xSelects.forEach(function (xSelect, index){
 
+        const xSelectLabel = xSelect.getElementsByClassName('xSelect__label');
+        const xSelectArrow = xSelectLabel[0].getElementsByClassName('xSelect__label__icon');
+        const xSelectOptionsBox = xSelect.getElementsByClassName('xSelect__options');
+        const xSelectSearch = xSelect.getElementsByClassName('xSelect__search');
+        const xSelectOptions = xSelectOptionsBox[0].querySelectorAll('.xSelect__option');
 
-
-
-
-$(".xSelect__label").on("click",function (e) {
-    $(this).parent().find(".xSelect__options").toggleClass("xToggle");
-});
-$(".xSelect__option__name").on("click",function (e) {
-    $(this).parent().parent().parent().parent().find(".xSelect__options").toggleClass("xToggle");
-    $(this).parent().parent().parent().parent().find(".xSelect__label__title").html($(this).text());
-});
-$(document).ready(function(){
-    $(".xSelect__search input").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $(this).parent().parent().parent().parent().find(".xSelect__option").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
-});
-
-$(document).on("click",".notification__close", function () {
-    $(".notification").remove();
-});
-
-
-
-
-
-// Functions *************************************************************************************
-
-/* MaxUp js Functions */
-
-
-
-
-/* nav Collaps/unCollaps */
-function Chnage_Data_Collaps(){
-    switch(Data_Collaps){
-        case true:
-            currect_height = nav.height();
-            nav.css("height" , "auto");
-            auto_height = nav.height();
-            nav.height(currect_height).animate({height: auto_height}, 300);
-            Data_Collaps = false;
-            break;
-        case false:
-            nav.css("height" , "60px");
-            Data_Collaps = true;
-            break;
-    }
+        xSelectLabel[0].addEventListener('click',function (){
+            xSelectsToggleOptions(xSelectOptionsBox , xSelectArrow);
+        })
+        xSelectSearch[0].addEventListener('keydown' ,function (){
+            SearchXSelect(xSelectSearch , xSelectOptionsBox , xSelectOptions);
+        })
+        xSelectOptions.forEach(function (el){
+            const LabelName = el.getElementsByClassName('xSelect__option__name')[0];
+            LabelName.addEventListener('click',function (e){
+                xSelectsToggleOptions(xSelectOptionsBox , xSelectArrow);
+                xSelectLabel[0].getElementsByClassName('xSelect__label__title')[0].innerHTML = LabelName.innerText;
+            })
+        })
+    })
 }
-/* --nav Collaps/unCollaps-- */
+
+function SearchXSelect(input , ul , li) {
+
+    const InputValue = input[0].value.toLowerCase();
+    let filter, a, i, txtValue;
+    filter = input[0].value.toUpperCase();
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByClassName('xSelect__option__name')[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 
 
 
+}
 
-/* Progress bar */
-function postFile(InputFile , ProgressBar , path) {
-    var formdata = new FormData();
+function xSelectsToggleOptions(el,arrow){
+    el[0].classList.toggle('xToggle');
+    arrow[0].classList.toggle('xToggleArrow');
+}
 
-    formdata.append(InputFile, $('#'+InputFile)[0].files[0]);
+function SetDataCollapseOnNavToggle(){
+    navToggleBtn[0].setAttribute('data-collapse' , DataCollapse);
+}
 
-    let request = new XMLHttpRequest();
+function PostFileProgress(InputFile, ProgressBar, path){
+    const formData = new FormData();
+    formData.append(InputFile, document.getElementById(InputFile)[0].files[0]);
+    const request = new XMLHttpRequest();
+    request.upload.addEventListener('progress', function (e){
+        const fileSize = document.getElementById(InputFile)[0].files[0].size;
 
-    request.upload.addEventListener('progress', function (e) {
-        let file1Size = $('#'+InputFile)[0].files[0].size;
-
-        if (e.loaded <= file1Size) {
-            let percent = Math.round(e.loaded / file1Size * 100);
-            $('#'+ProgressBar).width(percent + '%').html(percent + '%');
+        if (e.loaded <= fileSize){
+            const percent = Math.round(e.loaded / fileSize * 100);
+            document.getElementById(ProgressBar).innerWidth = percent+'%';
+        }
+        if (e.loaded === e.total){
+            document.getElementById(ProgressBar).innerWidth = 100+'%';
         }
 
-        if(e.loaded == e.total){
-            $('#'+ProgressBar).width(100 + '%').html(100 + '%');
-        }
     });
     request.open('post', path);
     request.timeout = 45000;
-    request.send(formdata);
+    request.send(formData);
 }
-/* --Progress bar-- */
 
+function Notifications(type, title = null, body= null){
+    let BackgroundColor,
+        FontColor,
+        Icon;
 
-function notifications(type) {
-    let title,body,cbg,fbg,icon;
-    switch (type) {
+    switch (type){
         case 'success':
-            fbg = "f-success";
-            cbg = 'bg-success';
-            title = "موفقیت آمیز";
-            body = "عملیات موفقیت آمیز بود";
-            icon = "fa fa-check";
+            BackgroundColor = 'bg-success';
+            FontColor = 'f-success';
+            Icon = 'fa fa-check';
+            title = (title != null) ? title : 'موفقیت آمیز';
+            body = (body != null) ? body : 'عملیات موفقیت آمیز بود';
             break;
         case 'danger':
-            fbg = "f-danger";
-            cbg = 'bg-danger';
-            title = "عدم موفقیت";
-            body = "عملیات با مشکل  مواجه شد!";
-            icon = "fas fa-times";
+            BackgroundColor = 'bg-danger';
+            FontColor = 'f-danger';
+            Icon = 'fas fa-times';
+            title = (title != null) ? title : 'عدم موفقیت';
+            body = (body != null) ? body : 'عملیات با مشکل  مواجه شد!';
             break;
         case 'warning':
-            fbg = "f-warning";
-            cbg = 'bg-warning';
-            title = "اخطار";
-            body = "عملیات با اخطار  مواجه شد!";
-            icon = "fas fa-exclamation-triangle";
+            BackgroundColor = 'bg-warning';
+            FontColor = 'f-warning';
+            Icon = 'fas fa-exclamation-triangle';
+            title = (title != null) ? title : 'اخطار';
+            body = (body != null) ? body : 'عملیات با اخطار  مواجه شد!';
             break;
     }
 
-    $("body").append('<div class="notification">\n' +
+    document.getElementsByTagName('body')[0].innerHTML +=
+        '<div class="notification">\n' +
         '  <div class="notification__main">\n' +
         '    <div class="notification__close row-c"><i class="fas fa-times"></i></div>\n' +
-        '    <div class="notification__color '+cbg+'"></div>\n' +
+        '    <div class="notification__color '+BackgroundColor+'"></div>\n' +
         '    <div class="notification__content">\n' +
-        '      <div class="notification__icon row-c '+cbg+'"><i class="'+icon+' f-light f-40"></i></div>\n' +
+        '      <div class="notification__icon row-c '+BackgroundColor+'"><i class="'+Icon+' f-light f-40"></i></div>\n' +
         '      <div class="notification__body">\n' +
         '        <p class="notification__context">'+body+'</p>\n' +
-        '        <h2 class="notification__title '+fbg+'">'+title+'</h2>\n' +
+        '        <h2 class="notification__title '+FontColor+'">'+title+'</h2>\n' +
         '      </div>\n' +
         '    </div>\n' +
         '  </div>\n' +
-        '</div>');
-    $(".notification__main").addClass("animate");
+        '</div>';
+
+    document.getElementsByClassName('notification__main')[0].classList.add('animate');
+    let Notification = document.getElementsByClassName('notification__close')[0];
+    Notification.addEventListener('click',function (){
+        document.getElementsByClassName('notification')[0].remove()
+    })
 }
+
+
+
+
+

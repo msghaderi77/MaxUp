@@ -44,32 +44,56 @@
   user-select: none;
   cursor: pointer;
 }
+.xSelect .xSelect__label .xSelect__label__icon {
+  transition: 0.3s ease-in-out;
+}
 .xSelect .xSelect__options {
-  position: absolute;
+  position: relative;
   margin-top: 10px;
   overflow-y: scroll;
   background-color: #fff;
   width: 100%;
   max-height: 300px;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 50px 5px 5px 5px;
   border: 1px solid #00000030;
   z-index: 1000000000000000100;
   transition: 0.4s ease-in-out;
-  clip-path: circle(0% at 100% 0);
+  clip-path: inset(0 0 100% 0);
 }
-.xSelect .xSelect__option {
-  border-radius: 10px;
+.xSelect .xSelect__options .xSelect__search {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: #f7f7f7;
+  padding: 10px;
 }
-.xSelect .xSelect__option:hover {
+.xSelect .xSelect__options .xSelect__option {
+  position: relative;
+}
+.xSelect .xSelect__options .xSelect__option .xSelect__option__name {
+  padding: 10px 20px;
+  width: 100%;
+  cursor: pointer;
+}
+.xSelect .xSelect__options .xSelect__option:hover {
   background-color: #f7f7f7;
 }
-.xSelect .xSelect__option .xSelect__option__name {
-  cursor: pointer;
-  width: 95%;
+.xSelect .xSelect__options .xSelect__option input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
 }
 .xSelect .xToggle {
-  clip-path: circle(150% at 100% 0);
+  clip-path: inset(0 0 0 0);
+}
+.xSelect .xToggleArrow {
+  transform: scaleY(-1);
 }
 
 /* End Select */

@@ -43,39 +43,58 @@
     border: 1px solid #00000030;
     user-select: none;
     cursor: pointer;
+    .xSelect__label__icon{transition: 0.3s ease-in-out}
   }
   .xSelect__options{
-    position: absolute;
+    position: relative;
     margin-top: 10px;
     overflow-y: scroll;
     background-color: #fff;
     width: 100%;
     max-height: 300px;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 50px 5px 5px 5px;
     border: 1px solid #00000030;
     z-index: 999999999999999999;
     transition: 0.4s ease-in-out;
+    clip-path: inset(0 0 100% 0);
 
-
-    clip-path: circle(0% at 100% 0);
-  }
-  .xSelect__option{
-    border-radius: 10px;
-    &:hover{
+    .xSelect__search{
+      position: absolute;
+      height: 40px;
+      width: 100%;
+      top: 0;
+      right: 0;
+      border: none;
       background-color: #f7f7f7;
+      padding: 10px;
     }
-    .xSelect__option__name{
-      cursor: pointer;
-      width: 95%;
+    .xSelect__option{
+      position: relative;
+      .xSelect__option__name{
+        padding: 10px 20px;
+        width: 100%;
+        cursor: pointer;
+      }
+      &:hover{
+        background-color: #f7f7f7;
+      }
+      input{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0;
+      }
     }
   }
 
 
-  .xToggle{
-    clip-path: circle(150% at 100% 0);
-  }
+
+  .xToggle{clip-path: inset(0 0 0 0);}
+  .xToggleArrow{transform: scaleY(-1)}
 }
+
 /* End Select */
 
 
