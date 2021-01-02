@@ -14,15 +14,18 @@ window.addEventListener('resize',function (){
 })
 
 /* Collapse/UnCollapse navbar on nav-toggle click */
-navToggleBtn[0].addEventListener('click',function (){
-    let NavBar = navToggleBtn[0].parentElement;
+if (navToggleBtn[0]){
+    navToggleBtn[0].addEventListener('click',function (){
+        let NavBar = navToggleBtn[0].parentElement;
 
-    if (!NavBar.classList.contains('navIsActive')) {
-        NavBar.classList.add('navIsActive');
-    }else{
-        NavBar.classList.remove('navIsActive');
-    }
-})
+        if (!NavBar.classList.contains('navIsActive')) {
+            NavBar.classList.add('navIsActive');
+        }else{
+            NavBar.classList.remove('navIsActive');
+        }
+    })
+}
+
 
 
 function RunXSelector(){
