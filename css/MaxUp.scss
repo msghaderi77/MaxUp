@@ -200,22 +200,17 @@ hr{opacity: 0.3;}
 .l-0{left: 0;}
 .r-0{right: 0;}
 
-
-.navIsActive{
-    clip-path: inset(0 0 0 0) !important;
-}
-
+.navIsActive{max-height: 100vh!important;}
 navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
     position: relative;
     display: flex;
     align-items: center;
     flex-wrap:  nowrap ;
-    min-height: auto;
-    transition: 0.3s ease-out;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
     z-index: 900;
-    $size: calc(100% - 60px);
-    clip-path: inset(0 0 $size 0);
+    max-height: 60px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out!important;
 
 
 
