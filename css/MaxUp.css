@@ -396,7 +396,7 @@ navlight, navdark, navtransparent, .navlight, .navdark, .navtransparent {
   clip-path: inset(0 0 calc(100% - 60px) 0);
 }
 navlight *, navdark *, navtransparent *, .navlight *, .navdark *, .navtransparent * {
-  padding: 5px;
+  padding: 0 5px;
   text-decoration: none;
   color: black;
 }
