@@ -392,7 +392,6 @@ navlight, navdark, navtransparent, .navlight, .navdark, .navtransparent {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
   z-index: 900;
   max-height: 60px;
-  overflow: hidden;
   transition: 0.5s ease-in-out !important;
 }
 navlight *, navdark *, navtransparent *, .navlight *, .navdark *, .navtransparent * {
@@ -492,6 +491,7 @@ navtransparent .nav-toggle, .navtransparent .nav-toggle {
 @media screen and (max-width: 800px) {
   navlight, navdark, navtransparent, .navlight, .navdark, .navtransparent {
     flex-wrap: wrap;
+    overflow: hidden;
   }
   navlight brand, navlight .brand, navdark brand, navdark .brand, navtransparent brand, navtransparent .brand, .navlight brand, .navlight .brand, .navdark brand, .navdark .brand, .navtransparent brand, .navtransparent .brand {
     flex: 0 0 80%;

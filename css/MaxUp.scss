@@ -209,7 +209,6 @@ navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
     z-index: 900;
     max-height: 60px;
-    overflow: hidden;
     transition: 0.5s ease-in-out!important;
 
 
@@ -284,7 +283,7 @@ navtransparent .nav-toggle,.navtransparent .nav-toggle{border-color: #292b2c46;}
     navlight , navdark , navtransparent , .navlight , .navdark , .navtransparent{
         //height: 60px;
         flex-wrap:  wrap ;
-        //overflow: hidden;
+        overflow: hidden;
 
         brand,.brand{flex: 0 0 80%;}
         .nav-toggle{flex: 0 0 10%;display: block;}
