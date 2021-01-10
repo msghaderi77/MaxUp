@@ -22,7 +22,7 @@
 
 body{padding: 0;margin: 0;}
 *{
-    a{text-decoration: none;color: unset;}
+    a{text-decoration: none;color: unset;display: inline-block}
     ul{list-style: none;}scroll-behavior: smooth;
 
     p{font-size: 1rem;}
@@ -299,6 +299,7 @@ navtransparent .nav-toggle,.navtransparent .nav-toggle{border-color: #292b2c46;}
 
 
 .btn-block{width: 100%;}
+.borderless{border: none!important;}
 button{
     padding: 10px 20px;
     cursor: pointer;

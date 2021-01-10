@@ -49,6 +49,9 @@ rox , .rox{
 .xcol_opt{position: relative;padding: 10px;}
 
 .xcol , xcol{
+    flex: 0 0 100%;
+    max-width: 100%;
+    @extend .xcol_opt;
     @for $i from 1 through 9{
         &-#{$i*10} {
             flex: 0 0 $i*10%;

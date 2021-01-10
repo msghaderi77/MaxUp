@@ -33,6 +33,7 @@ body {
 * a {
   text-decoration: none;
   color: unset;
+  display: inline-block;
 }
 * ul {
   list-style: none;
@@ -510,6 +511,10 @@ navtransparent .nav-toggle, .navtransparent .nav-toggle {
 }
 .btn-block, .btn-o-bee-r-block, a.btn-o-bee-r-block, .btn-o-bee-block, a.btn-o-bee-block, .btn-o-secondary-r-block, a.btn-o-secondary-r-block, .btn-o-secondary-block, a.btn-o-secondary-block, .btn-o-white-r-block, a.btn-o-white-r-block, .btn-o-white-block, a.btn-o-white-block, .btn-o-success-r-block, a.btn-o-success-r-block, .btn-o-success-block, a.btn-o-success-block, .btn-o-info-r-block, a.btn-o-info-r-block, .btn-o-info-block, a.btn-o-info-block, .btn-o-danger-r-block, a.btn-o-danger-r-block, .btn-o-danger-block, a.btn-o-danger-block, .btn-o-warning-r-block, a.btn-o-warning-r-block, .btn-o-warning-block, a.btn-o-warning-block, .btn-o-dark-r-block, a.btn-o-dark-r-block, .btn-o-dark-block, a.btn-o-dark-block, .btn-o-light-r-block, a.btn-o-light-r-block, .btn-o-light-block, a.btn-o-light-block, .btn-o-primary-r-block, a.btn-o-primary-r-block, .btn-o-primary-block, a.btn-o-primary-block, .btn-bee-r-block, a.btn-bee-r-block, .btn-bee-block, a.btn-bee-block, .btn-secondary-r-block, a.btn-secondary-r-block, .btn-secondary-block, a.btn-secondary-block, .btn-white-r-block, a.btn-white-r-block, .btn-white-block, a.btn-white-block, .btn-success-r-block, a.btn-success-r-block, .btn-success-block, a.btn-success-block, .btn-info-r-block, a.btn-info-r-block, .btn-info-block, a.btn-info-block, .btn-danger-r-block, a.btn-danger-r-block, .btn-danger-block, a.btn-danger-block, .btn-warning-r-block, a.btn-warning-r-block, .btn-warning-block, a.btn-warning-block, .btn-dark-r-block, a.btn-dark-r-block, .btn-dark-block, a.btn-dark-block, .btn-light-r-block, a.btn-light-r-block, .btn-light-block, a.btn-light-block, .btn-primary-r-block, a.btn-primary-r-block, .btn-primary-block, a.btn-primary-block {
   width: 100%;
+}
+
+.borderless {
+  border: none !important;
 }
 
 button, .btn, a.btn {
