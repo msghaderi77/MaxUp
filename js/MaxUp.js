@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function(){
         navToggleBtn[0].setAttribute('data-collapse' , DataCollapse);
     }
 
-    function PostFileProgress(InputFile, ProgressBar, path){
+    exports.PostFileProgress = function PostFileProgress(InputFile, ProgressBar, path){
         const formData = new FormData();
         formData.append(InputFile, document.getElementById(InputFile)[0].files[0]);
         const request = new XMLHttpRequest();
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function(){
         request.send(formData);
     }
 
-    function Notifications(type, title = null, body= null){
+    exports.Notifications = function Notifications(type, title = null, body= null){
         let BackgroundColor,
             FontColor,
             Icon;
@@ -154,4 +154,4 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     }
 });
-module.exports = { PostFileProgress , Notifications};
+
