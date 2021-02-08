@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
     /* change data collapse on window resize */
     window.addEventListener('resize',function (){
         DataCollapse = (window.innerWidth <= 800);
-        SetDataCollapseOnNavToggle();
+        (navToggleBtn[0]) ? SetDataCollapseOnNavToggle() : false;
     })
 
     /* Collapse/UnCollapse navbar on nav-toggle click */
@@ -154,3 +154,4 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     }
 });
+module.exports = { PostFileProgress , Notifications};
