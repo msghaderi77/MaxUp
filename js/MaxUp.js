@@ -82,76 +82,81 @@ document.addEventListener("DOMContentLoaded", function(){
         navToggleBtn[0].setAttribute('data-collapse' , DataCollapse);
     }
 
-    exports.PostFileProgress = function PostFileProgress(InputFile, ProgressBar, path){
-        const formData = new FormData();
-        formData.append(InputFile, document.getElementById(InputFile)[0].files[0]);
-        const request = new XMLHttpRequest();
-        request.upload.addEventListener('progress', function (e){
-            const fileSize = document.getElementById(InputFile)[0].files[0].size;
 
-            if (e.loaded <= fileSize){
-                const percent = Math.round(e.loaded / fileSize * 100);
-                document.getElementById(ProgressBar).innerWidth = percent+'%';
-            }
-            if (e.loaded === e.total){
-                document.getElementById(ProgressBar).innerWidth = 100+'%';
-            }
-
-        });
-        request.open('post', path);
-        request.timeout = 45000;
-        request.send(formData);
-    }
-
-    exports.Notifications = function Notifications(type, title = null, body= null){
-        let BackgroundColor,
-            FontColor,
-            Icon;
-
-        switch (type){
-            case 'success':
-                BackgroundColor = 'bg-success';
-                FontColor = 'f-success';
-                Icon = 'fa fa-check';
-                title = (title != null) ? title : 'موفقیت آمیز';
-                body = (body != null) ? body : 'عملیات موفقیت آمیز بود';
-                break;
-            case 'danger':
-                BackgroundColor = 'bg-danger';
-                FontColor = 'f-danger';
-                Icon = 'fas fa-times';
-                title = (title != null) ? title : 'عدم موفقیت';
-                body = (body != null) ? body : 'عملیات با مشکل  مواجه شد!';
-                break;
-            case 'warning':
-                BackgroundColor = 'bg-warning';
-                FontColor = 'f-warning';
-                Icon = 'fas fa-exclamation-triangle';
-                title = (title != null) ? title : 'اخطار';
-                body = (body != null) ? body : 'عملیات با اخطار  مواجه شد!';
-                break;
-        }
-
-        document.getElementsByTagName('body')[0].innerHTML +=
-            '<div class="notification">\n' +
-            '  <div class="notification__main">\n' +
-            '    <div class="notification__close row-c"><i class="fas fa-times"></i></div>\n' +
-            '    <div class="notification__color '+BackgroundColor+'"></div>\n' +
-            '    <div class="notification__content">\n' +
-            '      <div class="notification__icon row-c '+BackgroundColor+'"><i class="'+Icon+' f-light f-40"></i></div>\n' +
-            '      <div class="notification__body">\n' +
-            '        <p class="notification__context">'+body+'</p>\n' +
-            '        <h2 class="notification__title '+FontColor+'">'+title+'</h2>\n' +
-            '      </div>\n' +
-            '    </div>\n' +
-            '  </div>\n' +
-            '</div>';
-
-        document.getElementsByClassName('notification__main')[0].classList.add('animate');
-        let Notification = document.getElementsByClassName('notification__close')[0];
-        Notification.addEventListener('click',function (){
-            document.getElementsByClassName('notification')[0].remove()
-        })
-    }
 });
 
+
+const PostFileProgress = (InputFile, ProgressBar, path) => {
+    const formData = new FormData();
+    formData.append(InputFile, document.getElementById(InputFile)[0].files[0]);
+    const request = new XMLHttpRequest();
+    request.upload.addEventListener('progress', function (e){
+        const fileSize = document.getElementById(InputFile)[0].files[0].size;
+
+        if (e.loaded <= fileSize){
+            const percent = Math.round(e.loaded / fileSize * 100);
+            document.getElementById(ProgressBar).innerWidth = percent+'%';
+        }
+        if (e.loaded === e.total){
+            document.getElementById(ProgressBar).innerWidth = 100+'%';
+        }
+
+    });
+    request.open('post', path);
+    request.timeout = 45000;
+    request.send(formData);
+}
+
+const Notifications =  (type, title = null, body= null) => {
+    let BackgroundColor,
+        FontColor,
+        Icon;
+
+    switch (type){
+        case 'success':
+            BackgroundColor = 'bg-success';
+            FontColor = 'f-success';
+            Icon = 'fa fa-check';
+            title = (title != null) ? title : 'موفقیت آمیز';
+            body = (body != null) ? body : 'عملیات موفقیت آمیز بود';
+            break;
+        case 'danger':
+            BackgroundColor = 'bg-danger';
+            FontColor = 'f-danger';
+            Icon = 'fas fa-times';
+            title = (title != null) ? title : 'عدم موفقیت';
+            body = (body != null) ? body : 'عملیات با مشکل  مواجه شد!';
+            break;
+        case 'warning':
+            BackgroundColor = 'bg-warning';
+            FontColor = 'f-warning';
+            Icon = 'fas fa-exclamation-triangle';
+            title = (title != null) ? title : 'اخطار';
+            body = (body != null) ? body : 'عملیات با اخطار  مواجه شد!';
+            break;
+    }
+
+    document.getElementsByTagName('body')[0].innerHTML +=
+        '<div class="notification">\n' +
+        '  <div class="notification__main">\n' +
+        '    <div class="notification__close row-c"><i class="fas fa-times"></i></div>\n' +
+        '    <div class="notification__color '+BackgroundColor+'"></div>\n' +
+        '    <div class="notification__content">\n' +
+        '      <div class="notification__icon row-c '+BackgroundColor+'"><i class="'+Icon+' f-light f-40"></i></div>\n' +
+        '      <div class="notification__body">\n' +
+        '        <p class="notification__context">'+body+'</p>\n' +
+        '        <h2 class="notification__title '+FontColor+'">'+title+'</h2>\n' +
+        '      </div>\n' +
+        '    </div>\n' +
+        '  </div>\n' +
+        '</div>';
+
+    document.getElementsByClassName('notification__main')[0].classList.add('animate');
+    let Notification = document.getElementsByClassName('notification__close')[0];
+    Notification.addEventListener('click',function (){
+        document.getElementsByClassName('notification')[0].remove()
+    })
+}
+
+exports.PostFileProgress = PostFileProgress;
+exports.Notifications = Notifications;
