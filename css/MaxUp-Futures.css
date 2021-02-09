@@ -48,7 +48,7 @@
   transition: 0.3s ease-in-out;
 }
 .xSelect .xSelect__options {
-  position: relative;
+  position: absolute;
   margin-top: 10px;
   overflow-y: scroll;
   background-color: #fff;
