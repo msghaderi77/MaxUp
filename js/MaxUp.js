@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     /* get nav-toggle and if exist, add data-collapse */
     const navToggleBtn = document.getElementsByClassName('nav-toggle');
-    (navToggleBtn[0] != null) ? SetDataCollapseOnNavToggle() : console.log('nav-toggle dose not exist!');
+    (navToggleBtn[0]) ? SetDataCollapseOnNavToggle() : console.log('nav-toggle dose not exist!');
 
     /* change data collapse on window resize */
     window.addEventListener('resize',function (){
@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function(){
             NavBar.classList.toggle('navIsActive');
         })
     }
-
+    function SetDataCollapseOnNavToggle(){
+        navToggleBtn[0].setAttribute('data-collapse' , DataCollapse);
+    }
 });
 
 
@@ -79,9 +81,7 @@ function xSelectsToggleOptions(el,arrow){
     arrow[0].classList.toggle('xToggleArrow');
 }
 
-function SetDataCollapseOnNavToggle(){
-    navToggleBtn[0].setAttribute('data-collapse' , DataCollapse);
-}
+
 
 const PostFileProgress = (InputFile, ProgressBar, path) => {
     const formData = new FormData();
