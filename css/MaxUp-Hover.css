@@ -1,13 +1,4 @@
 /*  MaxUp-Hover */
-.h-up {
-  transition: 0.3s ease-in-out;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
-}
-.h-up:hover {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
-}
-
 .h-primary:hover {
   color: #6182b7;
 }
@@ -67,6 +58,54 @@
 }
 .h-bg-bee:hover {
   background-color: #ffc40e;
+}
+.h-up {
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+}
+.h-up:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.h-zoomIn-1:hover {
+  transform: scale(1.01);
+  transition: 0.3s ease-in-out;
+}
+.h-zoomIn-2:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+}
+.h-zoomIn-3:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease-in-out;
+}
+.h-zoomIn-4:hover {
+  transform: scale(1.04);
+  transition: 0.3s ease-in-out;
+}
+.h-zoomIn-5:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+.h-zoomOut-1:hover {
+  transform: scale(0.99);
+  transition: 0.3s ease-in-out;
+}
+.h-zoomOut-2:hover {
+  transform: scale(0.98);
+  transition: 0.3s ease-in-out;
+}
+.h-zoomOut-3:hover {
+  transform: scale(0.97);
+  transition: 0.3s ease-in-out;
+}
+.h-zoomOut-4:hover {
+  transform: scale(1.96);
+  transition: 0.3s ease-in-out;
+}
+.h-zoomOut-5:hover {
+  transform: scale(0.95);
+  transition: 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=MaxUp-Hover.css.map */

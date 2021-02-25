@@ -22,7 +22,12 @@
 
 body{padding: 0;margin: 0;}
 *{
-    a{text-decoration: none;color: unset;display: inline-block}
+    a{
+        text-decoration: none;
+        color: unset;
+        display: inline-block;
+        &:visited{color: palevioletred}
+    }
     ul{list-style: none;}scroll-behavior: smooth;
 
     p{font-size: 1rem;}
@@ -69,7 +74,7 @@ hr{opacity: 0.3;}
 
 .p-{
     &abs{position: absolute;}
-    &fixed{position: fixed;}
+    &fixed{position: fixed}
     &rel{position: relative;}
 }
 
@@ -250,7 +255,7 @@ navlight , navdark , navtransparent ,.navlight , .navdark , .navtransparent{
     &[class*="fixed"]{
         width: 100%;
         z-index: 999;
-        position: fixed;
+        position: sticky;
         top: 0;
         left: 0;
     }

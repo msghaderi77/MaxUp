@@ -1,12 +1,6 @@
 
 /*  MaxUp-Hover */
 
-// elemnt transform top up
-.h-up{
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 0 6px rgba(0,0,0,0.16);
-    &:hover{box-shadow: 0 5px 10px rgba(0,0,0,0.20);transform : translateY(-5px);}
-}
 
 .h{
     &-primary:hover{color: #6182b7;}
@@ -31,6 +25,27 @@
     &-bg-secondary:hover{background-color: #655653;}
     &-bg-bee:hover{background-color: #ffc40e;}
 
+    &-up{
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 0 6px rgba(0,0,0,0.16);
+        &:hover{box-shadow: 0 5px 10px rgba(0,0,0,0.20);transform : translateY(-5px);}
+    }
+
+    &-zoomIn{
+        &-1:hover{transform: scale(1.01);transition: 0.3s ease-in-out;}
+        &-2:hover{transform: scale(1.02);transition: 0.3s ease-in-out;}
+        &-3:hover{transform: scale(1.03);transition: 0.3s ease-in-out;}
+        &-4:hover{transform: scale(1.04);transition: 0.3s ease-in-out;}
+        &-5:hover{transform: scale(1.05);transition: 0.3s ease-in-out;}
+    }
+
+    &-zoomOut{
+        &-1:hover{transform: scale(0.99);transition: 0.3s ease-in-out;}
+        &-2:hover{transform: scale(0.98);transition: 0.3s ease-in-out;}
+        &-3:hover{transform: scale(0.97);transition: 0.3s ease-in-out;}
+        &-4:hover{transform: scale(1.96);transition: 0.3s ease-in-out;}
+        &-5:hover{transform: scale(0.95);transition: 0.3s ease-in-out;}
+    }
 }
 
 

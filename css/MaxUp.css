@@ -35,6 +35,9 @@ body {
   color: unset;
   display: inline-block;
 }
+* a:visited {
+  color: palevioletred;
+}
 * ul {
   list-style: none;
 }
@@ -438,7 +441,7 @@ navlight ul li a:not(.btn):hover, navlight ul li a:not(.btn).active, navdark ul 
 navlight[class*=fixed], navdark[class*=fixed], navtransparent[class*=fixed], .navlight[class*=fixed], .navdark[class*=fixed], .navtransparent[class*=fixed] {
   width: 100%;
   z-index: 999;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
 }
