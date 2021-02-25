@@ -22,12 +22,7 @@
 
 body{padding: 0;margin: 0;}
 *{
-    a{
-        text-decoration: none;
-        color: unset;
-        display: inline-block;
-        &:visited{color: palevioletred}
-    }
+    a{text-decoration: none;color: unset;display: inline-block;}
     ul{list-style: none;}scroll-behavior: smooth;
 
     p{font-size: 1rem;}

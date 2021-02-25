@@ -35,9 +35,6 @@ body {
   color: unset;
   display: inline-block;
 }
-* a:visited {
-  color: palevioletred;
-}
 * ul {
   list-style: none;
 }
