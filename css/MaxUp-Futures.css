@@ -180,5 +180,80 @@
   }
 }
 /* End Notification */
+/* input checkbox */
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  height: 25px;
+  width: 40px;
+  border-radius: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 5px 0 0 0;
+  border: 2px solid rgba(71, 71, 85, 0.21);
+  background: rgba(0, 0, 0, 0);
+  transition: all 0.2s ease;
+}
+.checkbox:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  box-shadow: 0 0 4px rgba(44, 44, 44, 0.3);
+  transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
+}
+.checkbox:checked {
+  border-color: #009774;
+}
+.checkbox:checked:after {
+  transform: translatex(15px);
+  background: #009774;
+}
+.checkbox:focus {
+  outline: 0;
+}
+
+/* input File */
+.file {
+  padding: 1em;
+  margin: 5px;
+  outline: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+.file .file__label {
+  width: 100%;
+  border: 2px dashed #161d20;
+  border-radius: 5px;
+  display: block;
+  padding: 1.2em;
+  transition: border 300ms ease;
+  cursor: pointer;
+  text-align: center;
+}
+.file .file__label i {
+  display: block;
+  font-size: 42px;
+  padding-bottom: 16px;
+}
+.file .file__label i, .file .file__label .file__title {
+  color: #0d1113;
+  transition: 200ms color;
+}
+.file .file__label:hover {
+  border: 2px solid #0d1113;
+}
+.file .file__label:hover i, .file .file__label:hover .file__title {
+  color: #0d1113;
+}
 
 /*# sourceMappingURL=MaxUp-Futures.css.map */

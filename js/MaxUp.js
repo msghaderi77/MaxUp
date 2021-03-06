@@ -154,6 +154,3 @@ const Notifications =  (type, title = null, body= null) => {
         document.getElementsByClassName('notification')[0].remove()
     })
 }
-
-exports.PostFileProgress = PostFileProgress;
-exports.Notifications = Notifications;
