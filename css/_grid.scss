@@ -1,0 +1,162 @@
+.container,container {padding: 0 15px; margin: 0 auto;}
+.ro, ro{
+  &w{
+    display: flex;
+    flex-wrap: wrap;
+    &-c{display: flex;justify-content: center;align-items: center;}
+  }
+
+  &x{
+    @for $i from 1 through 6 {
+      &-#{$i} {@extend .xcol-#{$i};}
+    }
+  }
+}
+corow , .corow{
+  @extend .container,.row;
+  &-c{@extend .container,.row-c;}
+}
+[class^=xcol]{position: relative;padding: 10px;}
+.xcol{
+  flex: 0 0 100%;max-width: 100%;
+  @for $i from 1 through 6 {
+    &-#{$i} {
+      flex: 0 0 (1% * (100/$i));
+      max-width: (1% * (100/$i));
+
+      @for $j from 1 through 6 {
+        &-#{$j} {
+          @extend .xcol-#{$i};
+          &-2 { @extend .xcol-2;}
+        }
+      }
+    }
+  }
+}
+column{
+  columns: auto;
+  display: block;
+  orphans: 1;
+  widows: 1;
+  column-fill: balance;
+  padding: 10px;
+
+  .vcol , vcol{width: 100%;break-inside: avoid;display: inline-block;}
+  .vcol-span , vcol-span{column-span: all;display: block;}
+
+
+  @for $i from 1 through 3{
+    &-#{$i}{
+      @extend column;column-count: #{$i};
+      &-2 ,&-3  {@extend column;@extend .column-#{$i};&-2 ,&-3 {@extend column;@extend .column-#{$i};}}
+    }
+  }
+}
+@media (max-width: 920px) {
+  .xcol_media_tablet{
+    flex: 0 0 100%;max-width: 100%;
+    @for $i from 1 through 6 {
+      &-#{$i} {
+        flex: 0 0 (1% * (100/$i));
+        max-width: (1% * (100/$i));
+      }
+    }
+  }
+  .xcol{
+    @for $i from 1 through 6 {
+      &-#{$i} {
+        @extend .xcol_media_tablet;
+
+        @for $j from 1 through 6 {
+          &-#{$j} {
+            @extend .xcol_media_tablet-#{$j};
+            &-2 {@extend .xcol_media_tablet-#{$j};}
+          }
+        }
+      }
+    }
+  }
+
+  .column_base_tablet{
+    @for $i from 1 through 3{
+      &-#{$i}{
+        column-count: $i;
+      }
+    }
+  }
+  .column{
+    @for $i from 1 through 3{
+      &-#{$i}{
+        @extend .column_base_tablet-1;
+
+        @for $j from 1 through 3{
+          &-#{$j}{
+            @if($j == 1){@extend .column_base_tablet-1;}
+            @else {@extend .column_base_tablet-#{$j};}
+
+            @for $j from 1 through 3{
+              &-#{$j}{
+                @if($j == 1){@extend .column_base_tablet-1;}
+                @else {@extend .column_base_tablet-#{$j};}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .xcol_media_mobile{
+    flex: 0 0 100%;max-width: 100%;
+    @for $i from 1 through 6 {
+      &-#{$i} {
+        flex: 0 0 (1% * (100/$i));
+        max-width: (1% * (100/$i));
+      }
+    }
+  }
+  .xcol{
+    @for $i from 1 through 6 {
+      &-#{$i} {
+        @extend .xcol_media_mobile;
+
+        @for $j from 1 through 6 {
+          &-#{$j} {
+            @extend .xcol_media_mobile;
+            &-2 {@extend .xcol_media_mobile-2;}
+          }
+        }
+      }
+    }
+  }
+
+
+  .column_base_mobile{
+    @for $i from 1 through 3{
+      &-#{$i}{
+        column-count: $i;
+      }
+    }
+  }
+  .column{
+    @for $i from 1 through 3{
+      &-#{$i}{
+        @extend .column_base_mobile-1;
+
+        @for $j from 1 through 3{
+          &-#{$j}{
+            @extend .column_base_mobile-1;
+
+            @for $k from 1 through 3{
+              &-#{$k}{
+                @if($k == 1){@extend .column_base_mobile-1;}
+                @else {@extend .column_base_mobile-#{$k};}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

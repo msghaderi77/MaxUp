@@ -81,8 +81,6 @@ function xSelectsToggleOptions(el,arrow){
     arrow[0].classList.toggle('xToggleArrow');
 }
 
-
-
 const PostFileProgress = (InputFile, ProgressBar, path) => {
     const formData = new FormData();
     formData.append(InputFile, document.getElementById(InputFile)[0].files[0]);

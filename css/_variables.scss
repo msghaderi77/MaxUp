@@ -1,6 +1,4 @@
-
-
-
+/*colors*/
 $primary : #6182b7;
 $primaryHA : #5a79ab;
 $primaryG : rgba(90, 121, 171, 0.3);
@@ -36,3 +34,20 @@ $secondaryG : rgba(95, 81, 78, 0.3);
 $bee: #ffc40e;
 $beeHA: #efb90e;
 $beeG: rgba(239, 185, 14, 0.3);
+
+
+/*z-indexes*/
+$base : 0;
+$above : 1; // use this for all values above the base
+$below : -1; // and this for all values below the base
+
+// Page Layout
+$zLayoutNavigation : $above + $base;
+$zLayoutFooter : $above + $base;
+$zLayoutModal : $above + $zLayoutNavigation;
+$zLayoutPopUpAd : $above + $zLayoutModal;
+
+// NavMenu
+$zNavMenuBackdrop : $below + $base;
+$zNavMenuPopover : $above + $base;
+$zNavMenuToggle : $above + $zNavMenuPopover;
