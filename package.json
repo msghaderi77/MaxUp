@@ -1,9 +1,9 @@
 {
   "name": "fibdesign_maxup",
   "style":"css/index.css",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "css framework",
-  "main": "",
+  "main": "js/MaxUp.js",
   "scripts": {
 
   },

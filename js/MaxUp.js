@@ -1,85 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(){
-
-    let DataCollapse = (window.innerWidth <= 800);
-
-    /* if select exist, run the algorithm */
-    (document.querySelectorAll('.xSelect') != null) ? RunXSelector() : false;
-
-    /* get nav-toggle and if exist, add data-collapse */
-    const navToggleBtn = document.getElementsByClassName('nav-toggle');
-    (navToggleBtn[0]) ? SetDataCollapseOnNavToggle() : console.log('nav-toggle dose not exist!');
-
-    /* change data collapse on window resize */
-    window.addEventListener('resize',function (){
-        DataCollapse = (window.innerWidth <= 800);
-        (navToggleBtn[0]) ? SetDataCollapseOnNavToggle() : false;
-    })
-
-    /* Collapse/UnCollapse navbar on nav-toggle click */
-    if (navToggleBtn[0]){
-        navToggleBtn[0].addEventListener('click',function (){
-            let NavBar = navToggleBtn[0].parentElement;
-
-            NavBar.classList.toggle('navIsActive');
-        })
-    }
-    function SetDataCollapseOnNavToggle(){
-        navToggleBtn[0].setAttribute('data-collapse' , DataCollapse);
-    }
-});
-
-
-function RunXSelector(){
-    const xSelects = document.querySelectorAll('.xSelect');
-    xSelects.forEach(function (xSelect, index){
-
-        const xSelectLabel = xSelect.getElementsByClassName('xSelect__label');
-        const xSelectArrow = xSelectLabel[0].getElementsByClassName('xSelect__label__icon');
-        const xSelectOptionsBox = xSelect.getElementsByClassName('xSelect__options');
-        const xSelectSearch = xSelect.getElementsByClassName('xSelect__search');
-        const xSelectOptions = xSelectOptionsBox[0].querySelectorAll('.xSelect__option');
-
-        xSelectLabel[0].addEventListener('click',function (){
-            xSelectsToggleOptions(xSelectOptionsBox , xSelectArrow);
-        })
-        xSelectSearch[0].addEventListener('keydown' ,function (){
-            SearchXSelect(xSelectSearch , xSelectOptionsBox , xSelectOptions);
-        })
-        xSelectOptions.forEach(function (el){
-            const LabelName = el.getElementsByClassName('xSelect__option__name')[0];
-            LabelName.addEventListener('click',function (e){
-                xSelectsToggleOptions(xSelectOptionsBox , xSelectArrow);
-                xSelectLabel[0].getElementsByClassName('xSelect__label__title')[0].innerHTML = LabelName.innerText;
-            })
-        })
-    })
-}
-
-function SearchXSelect(input , ul , li) {
-
-    const InputValue = input[0].value.toLowerCase();
-    let filter, a, i, txtValue;
-    filter = input[0].value.toUpperCase();
-
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByClassName('xSelect__option__name')[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-
-
-
-}
-
-function xSelectsToggleOptions(el,arrow){
-    el[0].classList.toggle('xToggle');
-    arrow[0].classList.toggle('xToggleArrow');
-}
 
 const PostFileProgress = (InputFile, ProgressBar, path) => {
     const formData = new FormData();
@@ -151,4 +69,77 @@ const Notifications =  (type, title = null, body= null) => {
     Notification.addEventListener('click',function (){
         document.getElementsByClassName('notification')[0].remove()
     })
+}
+
+class nav {
+    constructor(navigation) {
+        this.navigation = document.querySelector(navigation);
+        this.navToggleBtn = this.navigation.querySelector('.nav-toggle');
+        (this.navToggleBtn)
+            ? this.SetDataCollapseOnNavToggle()
+            : console.log('MaxUp Warning : nav-toggle dose not exist!');
+
+        window.addEventListener('resize', this.SetDataCollapseOnNavToggle.bind(this));
+
+        this.navToggleBtn.addEventListener('click', this.ToggleNav.bind(this));
+    }
+    SetDataCollapseOnNavToggle(){
+        this.navToggleBtn.setAttribute('data-collapse' , (window.innerWidth <= 800));
+    }
+    ToggleNav(){
+        this.navigation.classList.toggle('navIsActive')
+    }
+}
+
+class xSelect{
+    constructor(select) {
+        this.registerValriables(select);
+        this.label.addEventListener('click', this.ToggleSelect.bind(this))
+        this.options.forEach((option)=>{
+            option.querySelector('.xSelect__option__name').addEventListener('click', this.chooseOption.bind(this));
+        })
+        this.searchBar.addEventListener('keyup', this.search.bind(this))
+        document.addEventListener('click', this.checkClick.bind(this));
+        // (this.close) && this.closeSelect.bind(this);
+    }
+    registerValriables(select){
+        this.select = document.querySelector(select);
+        this.label = this.select.querySelector('.xSelect__label');
+        this.title = this.label.querySelector('.xSelect__label__title');
+        this.arrow = this.label.querySelector('.xSelect__label__icon');
+        this.optionsBox = this.select.querySelector('.xSelect__options');
+        this.searchBar = this.select.querySelector('.xSelect__search');
+        this.options = this.optionsBox.querySelectorAll('.xSelect__option');
+        // this.close = false;
+        this.arr = [];
+    }
+    ToggleSelect(){
+        this.optionsBox.classList.toggle('xToggle');
+        this.arrow.classList.toggle('xToggleArrow');
+    }
+    closeSelect(){
+        this.optionsBox.classList.remove('xToggle');
+        this.arrow.classList.remove('xToggleArrow');
+    }
+    replaceLabel(labelName){
+        this.title.innerHTML = labelName.path[0].innerText
+    }
+    chooseOption(labelName){
+        this.ToggleSelect()
+        this.replaceLabel(labelName)
+    }
+    search(){
+        const searchBarValue = this.searchBar.value.toUpperCase()
+        this.options.forEach((option)=>{
+            const optionName = option.querySelector('.xSelect__option__name').innerHTML;
+            option.style.display = (optionName.toUpperCase().indexOf(searchBarValue) > -1) ? '' : 'none'
+        })
+    }
+    checkClick(el){
+        this.arr = [];
+        el.path.forEach((elm) =>{
+            (elm instanceof Element) && this.arr.push(elm.classList[0])
+        });
+        (!this.arr.includes('xSelect')) && this.closeSelect()
+    }
 }

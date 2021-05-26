@@ -134,7 +134,7 @@ hr {
 .p-rel, .notification__content, .xSelect .xSelect__options .xSelect__option, .xSelect, .navigation {
   position: relative;
 }
-.p-sticky, .navigation[class*=fixed] {
+.p-sticky, .navigation.fixed {
   position: sticky;
 }
 
@@ -170,7 +170,7 @@ hr {
 .w-75 {
   width: 75% !important;
 }
-.w-100, .notification__content .notification__body, .notification, .xSelect .xSelect__options .xSelect__option .xSelect__option__name, .xSelect .xSelect__options .xSelect__search, .xSelect .xSelect__options, .xSelect, .progress, .alert, .alert-bee, .alert-secondary, .alert-success, .alert-info, .alert-danger, .alert-warning, .alert-dark, .alert-light, .alert-primary, .form, .form-r, .form-aria, .btn-block, .btn-o-bee-r-block, a.btn-o-bee-r-block, .btn-o-bee-block, a.btn-o-bee-block, .btn-o-secondary-r-block, a.btn-o-secondary-r-block, .btn-o-secondary-block, a.btn-o-secondary-block, .btn-o-white-r-block, a.btn-o-white-r-block, .btn-o-white-block, a.btn-o-white-block, .btn-o-success-r-block, a.btn-o-success-r-block, .btn-o-success-block, a.btn-o-success-block, .btn-o-info-r-block, a.btn-o-info-r-block, .btn-o-info-block, a.btn-o-info-block, .btn-o-danger-r-block, a.btn-o-danger-r-block, .btn-o-danger-block, a.btn-o-danger-block, .btn-o-warning-r-block, a.btn-o-warning-r-block, .btn-o-warning-block, a.btn-o-warning-block, .btn-o-dark-r-block, a.btn-o-dark-r-block, .btn-o-dark-block, a.btn-o-dark-block, .btn-o-light-r-block, a.btn-o-light-r-block, .btn-o-light-block, a.btn-o-light-block, .btn-o-primary-r-block, a.btn-o-primary-r-block, .btn-o-primary-block, a.btn-o-primary-block, .btn-bee-r-block, a.btn-bee-r-block, .btn-bee-block, a.btn-bee-block, .btn-secondary-r-block, a.btn-secondary-r-block, .btn-secondary-block, a.btn-secondary-block, .btn-white-r-block, a.btn-white-r-block, .btn-white-block, a.btn-white-block, .btn-success-r-block, a.btn-success-r-block, .btn-success-block, a.btn-success-block, .btn-info-r-block, a.btn-info-r-block, .btn-info-block, a.btn-info-block, .btn-danger-r-block, a.btn-danger-r-block, .btn-danger-block, a.btn-danger-block, .btn-warning-r-block, a.btn-warning-r-block, .btn-warning-block, a.btn-warning-block, .btn-dark-r-block, a.btn-dark-r-block, .btn-dark-block, a.btn-dark-block, .btn-light-r-block, a.btn-light-r-block, .btn-light-block, a.btn-light-block, .btn-primary-r-block, a.btn-primary-r-block, .btn-primary-block, a.btn-primary-block, .navigation[class*=fixed] {
+.w-100, .notification__content .notification__body, .notification, .xSelect .xSelect__options .xSelect__option .xSelect__option__name, .xSelect .xSelect__options .xSelect__search, .xSelect .xSelect__options, .xSelect, .progress, .alert, .alert-bee, .alert-secondary, .alert-success, .alert-info, .alert-danger, .alert-warning, .alert-dark, .alert-light, .alert-primary, .form, .form-r, .form-aria, .btn-block, .btn-o-bee-r-block, a.btn-o-bee-r-block, .btn-o-bee-block, a.btn-o-bee-block, .btn-o-secondary-r-block, a.btn-o-secondary-r-block, .btn-o-secondary-block, a.btn-o-secondary-block, .btn-o-white-r-block, a.btn-o-white-r-block, .btn-o-white-block, a.btn-o-white-block, .btn-o-success-r-block, a.btn-o-success-r-block, .btn-o-success-block, a.btn-o-success-block, .btn-o-info-r-block, a.btn-o-info-r-block, .btn-o-info-block, a.btn-o-info-block, .btn-o-danger-r-block, a.btn-o-danger-r-block, .btn-o-danger-block, a.btn-o-danger-block, .btn-o-warning-r-block, a.btn-o-warning-r-block, .btn-o-warning-block, a.btn-o-warning-block, .btn-o-dark-r-block, a.btn-o-dark-r-block, .btn-o-dark-block, a.btn-o-dark-block, .btn-o-light-r-block, a.btn-o-light-r-block, .btn-o-light-block, a.btn-o-light-block, .btn-o-primary-r-block, a.btn-o-primary-r-block, .btn-o-primary-block, a.btn-o-primary-block, .btn-bee-r-block, a.btn-bee-r-block, .btn-bee-block, a.btn-bee-block, .btn-secondary-r-block, a.btn-secondary-r-block, .btn-secondary-block, a.btn-secondary-block, .btn-white-r-block, a.btn-white-r-block, .btn-white-block, a.btn-white-block, .btn-success-r-block, a.btn-success-r-block, .btn-success-block, a.btn-success-block, .btn-info-r-block, a.btn-info-r-block, .btn-info-block, a.btn-info-block, .btn-danger-r-block, a.btn-danger-r-block, .btn-danger-block, a.btn-danger-block, .btn-warning-r-block, a.btn-warning-r-block, .btn-warning-block, a.btn-warning-block, .btn-dark-r-block, a.btn-dark-r-block, .btn-dark-block, a.btn-dark-block, .btn-light-r-block, a.btn-light-r-block, .btn-light-block, a.btn-light-block, .btn-primary-r-block, a.btn-primary-r-block, .btn-primary-block, a.btn-primary-block, .navigation.fixed {
   width: 100% !important;
 }
 .w-auto {
@@ -317,7 +317,7 @@ hr {
   box-shadow: #ccdbe8 3px 3px 6px 0 inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
-.t-0, .notification .notification__icon, .notification, .xSelect .xSelect__options .xSelect__option input, .xSelect .xSelect__options .xSelect__search, .navigation[class*=fixed] {
+.t-0, .notification .notification__icon, .notification, .xSelect .xSelect__options .xSelect__option input, .xSelect .xSelect__options .xSelect__search, .navigation.fixed {
   top: 0;
 }
 
@@ -325,16 +325,12 @@ hr {
   bottom: 0;
 }
 
-.l-0, .navigation[class*=fixed] {
+.l-0, .navigation.fixed {
   left: 0;
 }
 
 .r-0, .notification, .xSelect .xSelect__options .xSelect__option input, .xSelect .xSelect__options .xSelect__search {
   right: 0;
-}
-
-.navIsActive {
-  max-height: 100vh !important;
 }
 
 .navigation {
@@ -372,40 +368,46 @@ hr {
   opacity: 1;
   font-weight: bold;
 }
-.navigation[class*=noshadow] {
+.navigation.noshadow {
   box-shadow: unset;
 }
-.navigation[class*=navLight] * {
+.navigation.navLight * {
   color: #161d20;
 }
-.navigation[class*=navLight] .nav-toggle {
+.navigation.navLight .nav-toggle {
   border-color: #292b2c46;
 }
-.navigation[class*=navDark] * {
+.navigation.navDark {
+  background-color: #161d20;
+}
+.navigation.navDark * {
   color: #f1f1f1;
 }
-.navigation[class*=navDark] .nav-toggle {
+.navigation.navDark .nav-toggle {
   border-color: #f7f7f746;
+}
+.navigation.navIsActive {
+  max-height: 100vh !important;
 }
 
 /*if width was less @800 */
 @media screen and (max-width: 800px) {
-  navLight, navDark, navTransparent {
+  .navigation {
     flex-wrap: wrap;
     overflow: hidden;
   }
-  navLight brand, navDark brand, navTransparent brand {
+  .navigation brand {
     flex: 0 0 80%;
   }
-  navLight .nav-toggle, navDark .nav-toggle, navTransparent .nav-toggle {
+  .navigation .nav-toggle {
     flex: 0 0 10%;
     display: block;
   }
-  navLight ul, navDark ul, navTransparent ul {
+  .navigation ul {
     flex: 0 0 100%;
     flex-wrap: wrap;
   }
-  navLight ul li, navDark ul li, navTransparent ul li {
+  .navigation ul li {
     flex: 0 0 100%;
   }
 }

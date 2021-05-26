@@ -140,7 +140,7 @@ hr{opacity: 0.3;}
 .b-0{bottom: 0;}
 .l-0{left: 0;}
 .r-0{right: 0;}
-.navIsActive{max-height: 100vh!important;}
+
 .navigation{
     @extend .trans-5,.p-rel,.d-flexCenter,.box-s;
     z-index: variables.$zLayoutNavigation;
@@ -170,24 +170,26 @@ hr{opacity: 0.3;}
         }
     }
 
-    &[class*="fixed"]{@extend .t-0, .l-0, .w-100, .p-sticky;}
+    &.fixed{@extend .t-0, .l-0, .w-100, .p-sticky;}
 
-    &[class*="noshadow"] {box-shadow: unset;}
+    &.noshadow{box-shadow: unset;}
 
-    &[class*="navLight"] {
+    &.navLight {
         *{color: variables.$dark;}
         .nav-toggle{border-color: #292b2c46;}
     }
 
-    &[class*="navDark"] {
+    &.navDark {
         *{color: variables.$light;}
         .nav-toggle{border-color: #f7f7f746;}
+        background-color: variables.$dark;
     }
+    &.navIsActive{max-height: 100vh!important;}
 }
 /*if width was less @800 */
 @media screen and (max-width:800px){
 
-    navLight , navDark , navTransparent {
+    .navigation {
         flex-wrap:  wrap ;
         overflow: hidden;
         brand{flex: 0 0 80%;}
