@@ -147,7 +147,7 @@ hr{opacity: 0.3;}
     flex-wrap:  nowrap ;
     max-height: 60px;
     *{padding: 0 5px;color: black;}
-    brand{
+    .brand{
         @extend .d-flexCenter;
         height: 60px;
         margin-right: 30px;
@@ -829,62 +829,6 @@ table{
     }
     .xToggle{clip-path: inset(0 0 0 0);}
     .xToggleArrow{transform: scaleY(-1)}
-}
-.notification{
-    @extend .p-fixed,.t-0,.r-0,.w-100,.h-100,.d-flexCenter,.trans-2;
-    z-index: variables.$zLayoutModal;
-    background-color: #00000080;
-    justify-content: center;
-    backdrop-filter: blur(1px);
-
-    .notification__main.animate{animation: notification 1s forwards;}
-
-    &__color{
-        position: absolute;
-        border-radius: 10px;
-        width: 350px;
-        height: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50% , 15%);
-    }
-    &__content{
-        @extend .d-flex,.p-rel,.round-20,.f-center;
-        z-index: variables.$zNavMenuPopover;
-        align-items: flex-end;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 400px;
-        height: 200px;
-        background-color: #fff;
-
-        .notification__body{
-            @extend .w-100,.mb-1;flex: 0 0 100%;
-            .notification__context{color: #00000060;}
-        }
-    }
-    .notification__icon{
-        @extend .round-circle,.p-abs,.t-0;
-        width: 120px;
-        height: 120px;
-        transform: translateY(-50%);
-        border: 2px solid white;
-    }
-    .notification__close{
-        position: absolute;
-        z-index: variables.$zNavMenuToggle;
-        right: 20px;
-        top: 20px;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        border-radius: 10px;
-        &:hover{background-color: #00000020;}
-    }
-}
-@keyframes notification {
-    0%{transform: translateY(-30px);opacity: 0}
-    100%{transform: translateY(0);opacity: 1}
 }
 .checkbox {
     -webkit-appearance: none;

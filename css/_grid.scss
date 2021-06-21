@@ -27,7 +27,7 @@ corow , .corow{
       @for $j from 1 through 6 {
         &-#{$j} {
           @extend .xcol-#{$i};
-          &-2 { @extend .xcol-2;}
+          &-2 { @extend .xcol-#{$i};}
         }
       }
     }
