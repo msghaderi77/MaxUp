@@ -4,18 +4,27 @@
 ::-webkit-scrollbar-thumb{background:  #0275d8;border-radius: 10px;scroll-padding-block-start: 10px;}
 ::-webkit-scrollbar-thumb:active{background:  #00a0d6;}
 ::-webkit-scrollbar-track{display: none;}
+@supports (scrollbar-width: thin) {
+    *{
+        scrollbar-width: thin;
+        scrollbar-color: #5d5db3 #ffffff00;
+    }
+}
+root{
+  font-size: 16px;
+}
 body{padding: 0;margin: 0;}
 *{
     a{text-decoration: none;color: unset;display: inline-block;}
     ul{list-style: none;}scroll-behavior: smooth;
 
-    p{font-size: 1rem;}
-    h1{font-size: 2.5rem;}
-    h2{font-size: 2rem;}
-    h3{font-size: 1.75rem;}
-    h4{font-size: 1.5rem ;}
-    h5{font-size: 1.25rem ;}
-    h6{font-size: 1.15rem;}
+    p, a{font-size: 1rem;}
+    h1, .h1{font-size: 4.2rem;}
+    h2, .h2{font-size: 3.56rem;}
+    h3, .h3{font-size: 2.92rem;}
+    h4, .h4{font-size: 2.28rem ;}
+    h5, .h5{font-size: 1.64rem ;}
+    h6, .h6{font-size: 1.2rem;}
 
     p,h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         margin: 0!important;
@@ -156,7 +165,8 @@ hr{opacity: 0.3;}
     .nav-toggle{
         @extend .d-none, .rounded;
         background-color: transparent;
-        border: solid 1px;
+        margin-right: auto;
+        margin-left: 1em;
         i *{color: black!important;}
     }
     ul{
@@ -176,12 +186,10 @@ hr{opacity: 0.3;}
 
     &.navLight {
         *{color: variables.$dark;}
-        .nav-toggle{border-color: #292b2c46;}
     }
 
     &.navDark {
         *{color: variables.$light;}
-        .nav-toggle{border-color: #f7f7f746;}
         background-color: variables.$dark;
     }
     &.navIsActive{max-height: 100vh!important;}
@@ -202,7 +210,8 @@ hr{opacity: 0.3;}
 .btn-block{@extend .w-100;}
 .borderless{border: none!important;}
 button{
-    @extend .p-1-2, .rounded, .trans-2;
+    @extend .rounded, .trans-2;
+    padding: .8em 1.5em;
     cursor: pointer;
     border: unset;
 }
@@ -791,45 +800,45 @@ table{
         }
     }
 }
-.xSelect{
-    @extend .w-100,.p-rel;
-    .xSelect__label{
-        background-color: #fff;
-        width: 100%;
-        height: 40px;
-        border-radius: 10px;
-        padding: 5px 10px;
-        border: 1px solid #00000030;
-        user-select: none;
-        cursor: pointer;
-        .xSelect__label__icon{transition: 0.3s ease-in-out}
-    }
-    .xSelect__options{
-        @extend .p-abs,.mt-1,.w-100,.rounded,.trans-4;
-        overflow-y: scroll;
-        background-color: #fff;
-        max-height: 300px;
-        padding: 50px 5px 5px 5px;
-        border: 1px solid #00000030;
-        z-index: variables.$zNavMenuToggle;
-        clip-path: inset(0 0 100% 0);
-
-        .xSelect__search{
-            @extend .p-abs,.w-100,.t-0,.r-0,.p-1;
-            height: 40px;
-            border: none;
-            background-color: #f7f7f7;
-        }
-        .xSelect__option{
-            @extend .p-rel;
-            .xSelect__option__name{@extend .p-1-2,.w-100;cursor: pointer;}
-            &:hover{@extend .bg-light;}
-            input{@extend .p-abs,.t-0,.r-0,.opt-0;z-index: variables.$below;}
-        }
-    }
-    .xToggle{clip-path: inset(0 0 0 0);}
-    .xToggleArrow{transform: scaleY(-1)}
-}
+//.xSelect{
+//    @extend .w-100,.p-rel;
+//    .xSelect__label{
+//        background-color: #fff;
+//        width: 100%;
+//        height: 40px;
+//        border-radius: 10px;
+//        padding: 5px 10px;
+//        border: 1px solid #00000030;
+//        user-select: none;
+//        cursor: pointer;
+//        .xSelect__label__icon{transition: 0.3s ease-in-out}
+//    }
+//    .xSelect__options{
+//        @extend .p-abs,.mt-1,.w-100,.rounded,.trans-4;
+//        overflow-y: scroll;
+//        background-color: #fff;
+//        max-height: 300px;
+//        padding: 50px 5px 5px 5px;
+//        border: 1px solid #00000030;
+//        z-index: variables.$zNavMenuToggle;
+//        clip-path: inset(0 0 100% 0);
+//
+//        .xSelect__search{
+//            @extend .p-abs,.w-100,.t-0,.r-0,.p-1;
+//            height: 40px;
+//            border: none;
+//            background-color: #f7f7f7;
+//        }
+//        .xSelect__option{
+//            @extend .p-rel;
+//            .xSelect__option__name{@extend .p-1-2,.w-100;cursor: pointer;}
+//            &:hover{@extend .bg-light;}
+//            input{@extend .p-abs,.t-0,.r-0,.opt-0;z-index: variables.$below;}
+//        }
+//    }
+//    .xToggle{clip-path: inset(0 0 0 0);}
+//    .xToggleArrow{transform: scaleY(-1)}
+//}
 .checkbox {
     -webkit-appearance: none;
     -moz-appearance: none;
