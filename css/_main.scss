@@ -150,6 +150,7 @@ hr{opacity: 0.3;}
 .l-0{left: 0;}
 .r-0{right: 0;}
 
+
 .navigation{
     @extend .trans-5,.p-rel,.d-flexCenter,.box-s;
     z-index: variables.$zLayoutNavigation;
@@ -159,15 +160,22 @@ hr{opacity: 0.3;}
     .brand{
         @extend .d-flexCenter;
         height: 60px;
-        margin-right: 30px;
+        &.rtlB{margin-right: 2em;}
+        &.ltrB{margin-left: 2em;}
         img{height: 50px;}
     }
     .nav-toggle{
         @extend .d-none, .rounded;
         background-color: transparent;
-        margin-right: auto;
-        margin-left: 1em;
         i *{color: black!important;}
+        &.rtlT{
+            margin-right: auto;
+            margin-left: 1em;
+        }
+        &.ltrT{
+            margin-right: 1em;
+            margin-left: auto;
+        }
     }
     ul{
         @extend .d-flex;list-style: none;

@@ -20,7 +20,7 @@ const PostFileProgress = (InputFile, ProgressBar, path) => {
     request.send(formData);
 }
 
-class nav {
+export class nav {
     constructor(navigation) {
         this.navigation = document.querySelector(navigation);
         this.navToggleBtn = this.navigation.querySelector('.nav-toggle');

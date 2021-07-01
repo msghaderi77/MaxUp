@@ -354,18 +354,29 @@ hr {
 }
 .navigation .brand {
   height: 60px;
-  margin-right: 30px;
+}
+.navigation .brand.rtlB {
+  margin-right: 2em;
+}
+.navigation .brand.ltrB {
+  margin-left: 2em;
 }
 .navigation .brand img {
   height: 50px;
 }
 .navigation .nav-toggle {
   background-color: transparent;
-  margin-right: auto;
-  margin-left: 1em;
 }
 .navigation .nav-toggle i * {
   color: black !important;
+}
+.navigation .nav-toggle.rtlT {
+  margin-right: auto;
+  margin-left: 1em;
+}
+.navigation .nav-toggle.ltrT {
+  margin-right: 1em;
+  margin-left: auto;
 }
 .navigation ul {
   list-style: none;
